@@ -1,0 +1,68 @@
+article > *:not(.entry-content),
+.entry-content > * {
+    @apply mx-auto max-w-content;
+}
+
+.entry-content, .block-editor-block-list__layout {
+    h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    h3 {
+        @apply text-lg;
+    }
+
+    p, ul, ol {
+        a {
+            @apply text-blue-500 underline;
+
+            &:hover {
+                @apply no-underline;
+            }
+        }
+
+        @apply mb-8;
+    }
+
+    ul:not(.block-editor-block-variation-picker__variations) {
+        li {
+            @apply list-disc list-inside;
+        }
+    }
+
+    ol {
+        li {
+            @apply list-decimal list-inside;
+        }
+    }
+}
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+    border: 1px solid;
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: #000;
+    width: 70%;
+}
+textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
+    border: 1px solid;
+    border-radius: 12px;
+    padding: 10px 20px;
+    height: 160px;
+    width: 70%;
+    color: #000;
+}
+input.wpcf7-form-control.wpcf7-submit.has-spinner {
+    background: #378CCA;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    width: 120px;
+    margin-top: 20px;
+    cursor: pointer;
+}
