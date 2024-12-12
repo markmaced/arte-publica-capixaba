@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="flex w-full justify-center">
-            <a class="px-5 py-3 bg-logo-blue text-white rounded-lg text-base font-bold" href="#">Veja todas as
+            <a class="px-5 py-3 bg-logo-blue text-white rounded-2xl text-base font-bold" href="#">Veja todas as
                 publicações</a>
         </div>
     </div>
@@ -104,15 +104,17 @@
     <div class="max-w-5xl w-full mx-auto">
         <div class="w-full flex">
             <div class="w-1/2 pr-10">
-                <h2 class="font-black text-4xl mb-5 text-black">Arte Pública <br>Capixaba</h2>
-                <p class="text-black text-base mb-10 font-normal">Nesse site podem ser acessados conteúdos como
-                    fotografias das obras de arte públicas em diversas modalidades, além da produção bibliográfica
-                    produzida por pesquisadores da área.
-                    A expectativa é que este portal seja uma fonte de pesquisa para alunos, professores e a comunidade
-                    capixaba em geral. À medida que a pesquisa for avançando passará por constantes atualizações.</p>
+                <h2 class="font-black text-4xl mb-6 text-black">Arte Pública <br>Capixaba</h2>
+                <div class="mb-10 space-y-3">
+                    <p class="text-black">
+                        Nesse site podem ser acessados conteúdos como fotografias das obras de arte públicas em diversas modalidades, além da produção bibliográfica produzida por pesquisadores da área.
+                    </p>
+                    <p class="text-black">
+                        A expectativa é que este portal seja uma fonte de pesquisa para alunos, professores e a comunidade capixaba em geral. À medida que a pesquisa for avançando passará por constantes atualizações.
+                    </p>
+                </div>
                 <div class="w-full">
-                    <a class="px-5 py-3 bg-logo-blue text-white rounded-lg text-base font-bold" href="#">Acesso o
-                        Acervo</a>
+                    <a class="px-5 py-3 bg-logo-blue text-white rounded-2xl text-base font-bold" href="#">Acesse o acervo</a>
                 </div>
             </div>
         </div>
@@ -271,7 +273,7 @@
         </div>
     </div>
 </section>
-<section class="w-full py-20 font-lato">
+<!-- <section class="w-full py-20 font-lato">
     <div class="max-w-5xl w-full mx-auto">
         <div class="w-full flex max-w-full flex-nowrap gap-5">
             <img src="/wp-content/themes/tainacan-theme/resources/images/tainacam.png">
@@ -282,6 +284,38 @@
             <img src="/wp-content/themes/tainacan-theme/resources/images/capes.png">
             <img src="/wp-content/themes/tainacan-theme/resources/images/funcultura.png">
             <img src="/wp-content/themes/tainacan-theme/resources/images/fapes.png">
+        </div>
+    </div>
+</section>
+-->
+
+<section class="bg-white">
+    <div class="py-8 lg:py-16 mx-auto max-w-screen-2xl px-4">
+        <div class="flex justify-between space-x-10">
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/tainacam.png' ?>" class="h-8 grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/ufes.png' ?>" class="h-[72px] grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/leena.png' ?>" class="h-[70px] grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/sectides.png' ?>" class="h-[50px] grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/cnpq.png' ?>" class="h-[50px] grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/capes.png' ?>" class="h-8 grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/funcultura.png' ?>" class="h-8 grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
+            <a href="#" class="flex justify-center items-center">
+                <img src="<?php echo get_template_directory_uri() . '/resources/images/fapes.png' ?>" class="h-11 grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
+            </a>
         </div>
     </div>
 </section>

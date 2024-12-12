@@ -28,13 +28,16 @@ module.exports = {
                 'logo-blue': '#378CCA',
                 'title-gray': '#272727',
                 'subtitle-gray': '#4D4D4D',
-                'grafitti': '#666666'
+                'grafitti': '#666666',
+                'preto-50': '#808080',
+                'preto-60': '#666666'
             },
             fontFamily: {
                 lato: ['Lato', 'sans-serif'],
             },
             boxShadow: {
                 'soft-shadow': '0px 3px 16px 0px rgba(139, 139, 139, 0.2)',
+                'common-shadow': '0px 4px 8px 0px #00000033',
             },
         },
         screens: {

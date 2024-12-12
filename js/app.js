@@ -16,6 +16,36 @@ window.addEventListener('load', function () {
   });
 });
 
+// Faq
+document.addEventListener("alpine:init", function () {
+  Alpine.store("accordion", {
+    tab: 0
+  });
+  Alpine.data("accordion", function (idx) {
+    return {
+      init: function init() {
+        this.idx = idx;
+      },
+      idx: -1,
+      handleClick: function handleClick() {
+        this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+      },
+      handleRotate: function handleRotate() {
+        return this.$store.accordion.tab === this.idx ? "-rotate-180 !text-white" : "";
+      },
+      handleBackground: function handleBackground() {
+        return this.$store.accordion.tab === this.idx ? "bg-logo-blue" : "";
+      },
+      handleTextChange: function handleTextChange() {
+        return this.$store.accordion.tab === this.idx ? "text-white" : "";
+      },
+      handleToggle: function handleToggle() {
+        return this.$store.accordion.tab === this.idx ? "max-height: ".concat(this.$refs.tab.scrollHeight, "px") : "";
+      }
+    };
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/css/app.css":
