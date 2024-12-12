@@ -290,7 +290,7 @@
 -->
 
 <section class="bg-white">
-    <div class="py-8 lg:py-16 mx-auto max-w-screen-2xl px-4">
+    <div class="py-8 lg:py-16 mx-auto max-w-6xl px-4">
         <div class="flex justify-between space-x-10">
             <a href="#" class="flex justify-center items-center">
                 <img src="<?php echo get_template_directory_uri() . '/resources/images/tainacam.png' ?>" class="h-8 grayscale hover:grayscale-0 filter opacity-70 hover:opacity-100 transition duration-300">
