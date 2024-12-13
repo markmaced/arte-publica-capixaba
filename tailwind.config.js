@@ -34,16 +34,20 @@ module.exports = {
             },
             fontFamily: {
                 lato: ['Lato', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
             },
             boxShadow: {
                 'soft-shadow': '0px 3px 16px 0px rgba(139, 139, 139, 0.2)',
                 'common-shadow': '0px 4px 8px 0px #00000033',
             },
+            
         },
         screens: {
             'xs': '480px',
             'sm': '600px',
             'md': '782px',
+            'tainacan': '1146px',
+            'tainacan-lg': '1506px',
             'lg': tailpress.theme('settings.layout.contentSize', theme),
             'xl': tailpress.theme('settings.layout.wideSize', theme),
             '2xl': '1440px'
