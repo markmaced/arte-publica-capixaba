@@ -1,67 +1,67 @@
-<section class="w-full bg-medium-gray lg:py-48 py-20 font-lato">
-    <div class="max-w-5xl w-full mx-auto">
-        <div class="w-full flex">
-            <div class="w-2/3 pr-10">
-                <h2 class="font-black text-6xl mb-5 text-black">o acervo da arte <br> pública capixaba</h2>
-                <div class="mb-10 space-y-3">
-                    <p class="text-black pr-2">
-                        O acervo digital disponibiliza aos visitantes um repertório imagético, técnico e histórico das obras de Arte Pública, de diferentes modalidades, localizadas nos 78 municípios do estado do Espírito Santo.
-                    </p>
-                    <p class="text-black pr-4">
-                        O material, aqui apresentado, é passível de complementações e atualizações ao longo da pesquisa, visando contribuir para uma experiência de conhecimento que contribua para o enriquecimento visual e identitário sobre esta modalidade artística.
-                    </p>
+<div class="flex flex-col lg:flex-col-reverse">
+    <section class="lg:block py-2 lg:py-10 px-2 lg:px-4">
+        <div class="flex gap-2 lg:gap-6 overflow-hidden">
+            <div class="h-96 bg-medium-gray rounded-lg w-11/12 lg:w-3/12"></div>
+            <div class="h-96 bg-medium-gray rounded-lg w-1/12 lg:w-2/12"></div>
+            <div class="h-96 bg-medium-gray rounded-lg w-8/12 hidden lg:block lg:w-3/12"></div>
+            <div class="h-96 bg-medium-gray rounded-lg w-8/12 hidden lg:block lg:w-4/12"></div>
+            <div class="h-96 bg-medium-gray rounded-lg w-8/12 hidden lg:block lg:w-2/12"></div>
+        </div>
+    </section>
+
+    <section class="w-full bg-medium-gray lg:py-48 py-20 font-lato">
+        <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
+            <div class="w-full flex">
+                <div class="lg:w-2/3 lg:pr-10">
+                    <h2 class="font-black text-4xl lg:text-6xl mb-5 text-black">o acervo da arte <br> pública capixaba</h2>
+                    <div class="space-y-3">
+                        <p class="text-black pr-2">
+                            O acervo digital disponibiliza aos visitantes um repertório imagético, técnico e histórico das obras de Arte Pública, de diferentes modalidades, localizadas nos 78 municípios do estado do Espírito Santo.
+                        </p>
+                        <p class="text-black pr-4">
+                            O material, aqui apresentado, é passível de complementações e atualizações ao longo da pesquisa, visando contribuir para uma experiência de conhecimento que contribua para o enriquecimento visual e identitário sobre esta modalidade artística.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
-<section class="hidden lg:block py-10 px-4">
-    <div class="flex gap-6">
-        <div class="h-96 bg-medium-gray rounded-lg w-3/12"></div>
-        <div class="h-96 bg-medium-gray rounded-lg w-2/12"></div>
-        <div class="h-96 bg-medium-gray rounded-lg w-3/12"></div>
-        <div class="h-96 bg-medium-gray rounded-lg w-4/12"></div>
-        <div class="h-96 bg-medium-gray rounded-lg w-2/12"></div>
-    </div>
-</section>
-
-<section class="py-20 max-w-5xl mx-auto px-8 lg:px-0">
-
-
+<section class="py-20 max-w-screen-tainacan mx-auto px-8 lg:px-0">
     <form class="max-w-xl mx-auto mb-16">
         <div class="flex flex-col lg:flex-row items-center">
             <label class="lg:mr-6 mb-12 lg:mb-0 text-2xl font-medium text-subtitle-gray">Pesquisar</label>
             <div class="flex flex-1 space-x-6 lg:m-0">
-                <!-- <div x-data="{ isOpen: false, openedWithKeyboard: false }" class="relative" @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
-                    <button type="button" @click="isOpen = ! isOpen" class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-md border border-neutral-300 bg-neutral-50 px-4 py-2 text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:focus-visible:outline-neutral-300" aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true" @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true" :class="isOpen || openedWithKeyboard ? 'text-neutral-900 dark:text-white' : 'text-neutral-600 dark:text-neutral-300'" :aria-expanded="isOpen || openedWithKeyboard">
-                        Actions Menu
+                <!-- <div>
+                    <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-subtitle-gray bg-light-gray rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-100 shadow-common-shadow" type="button">cidade<svg class="w-2.5 h-2.5 ms-2.5 text-subtitle-gray" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-common-shadow w-44">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
+                            <li>
+                                <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Cidade</button>
+                            </li>
+                            <li>
+                                <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Estado</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div> -->
+                <div x-data="{ isOpen: false, openedWithKeyboard: false }" class="relative" @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
+                    <button type="button" @click="isOpen = ! isOpen" class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap text-subtitle-gray bg-light-gray rounded-lg px-5 py-3 text-sm font-medium shadow-common-shadow transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800" aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true" @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true" :class="isOpen || openedWithKeyboard ? 'text-neutral-900' : 'text-neutral-600'" :aria-expanded="isOpen || openedWithKeyboard">
+                        Cidade
                         <svg aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 rotate-0">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
-                    <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" class="absolute top-11 left-0 flex w-full min-w-[12rem] flex-col overflow-hidden rounded-md border border-neutral-300 bg-neutral-50 py-1.5 dark:border-neutral-700 dark:bg-neutral-900" role="menu">
-                        <a href="#" class="bg-neutral-50 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-50/5 dark:hover:text-white dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Dashboard</a>
-                        <a href="#" class="bg-neutral-50 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-50/5 dark:hover:text-white dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Subscription</a>
-                        <a href="#" class="bg-neutral-50 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-50/5 dark:hover:text-white dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Settings</a>
-                        <a href="#" class="bg-neutral-50 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-50/5 dark:hover:text-white dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">Sign Out</a>
+                    <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" class="absolute top-12 left-0 flex w-full min-w-[12rem] flex-col overflow-hidden rounded-md border border-neutral-300 bg-light-gray py-1.5" role="menu">
+                        <a href="#" class="px-4 py-2 text-sm text-subtitle hover:bg-medium-gray focus-visible:bg-neutral-900 focus-visible:text-neutral-900 focus-visible:outline-none" role="menuitem">Cidade</a>
+                        <a href="#" class="px-4 py-2 text-sm text-subtitle hover:bg-medium-gray focus-visible:bg-neutral-900 focus-visible:text-neutral-900 focus-visible:outline-none" role="menuitem">Estado</a>
                     </div>
-                </div> -->
-
-                <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-subtitle-gray bg-light-gray rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-100 shadow-common-shadow" type="button">cidade<svg class="w-2.5 h-2.5 ms-2.5 text-subtitle-gray" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                    </svg>
-                </button>
-                <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-common-shadow w-44">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-                        <li>
-                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Cidade</button>
-                        </li>
-                        <li>
-                            <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Estado</button>
-                        </li>
-                    </ul>
                 </div>
+
                 <div class="relative w-full">
                     <input type="search" id="search-dropdown" class="block p-3 w-full z-20 text-sm text-subtitle-gray bg-light-gray rounded-lg placeholder:text-preto-60 shadow-common-shadow" placeholder="Digite sua pesquisa aqui" required />
                     <button type="submit" class="absolute top-0 end-0 p-3 text-sm font-medium h-full text-preto-60">

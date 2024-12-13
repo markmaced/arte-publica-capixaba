@@ -1,17 +1,33 @@
-
 </main>
 
-<?php do_action( 'tailpress_content_end' ); ?>
+<?php do_action('tailpress_content_end'); ?>
 
 </div>
 
-<?php do_action( 'tailpress_content_after' ); ?>
+<?php do_action('tailpress_content_after'); ?>
 
-<footer id="colophon" class="site-footer" role="contentinfo">
-	<?php do_action( 'tailpress_footer' ); ?>
+<footer id="colophon" class="site-footer" role="contentinfo"
+	x-data="{
+          reorderMenu() {
+            const menu = document.getElementById('menu-footer-menu');
+            const item23 = document.getElementById('menu-item-23');
+            if (menu && item23) {
+              if (window.innerWidth < 969) {
+                menu.appendChild(item23);
+              }
+            }
+          }
+        }"
+	x-init="
+		reorderMenu();
+		window.addEventListener('resize', () => {
+		reorderMenu();
+		});
+	">
+	<?php do_action('tailpress_footer'); ?>
 
 	<div class="bg-light-gray py-20">
-		<div class="container lg:max-w-5xl mx-auto flex justify-between items-center">
+		<div class="px-8 lg:px-0 lg:max-w-screen-tainacan mx-auto flex flex-col gap-8 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
 			<div>
 				<img class="w-14 mb-2" src="/wp-content/themes/tainacan-theme/resources/images/arte-publica-logo.png">
 				<h1 class="text-2xl font-bold text-title-gray font-lato">Arte Pública Capixaba</h1>
@@ -19,10 +35,10 @@
 			<nav class="footer-nav">
 				<?php
 				wp_nav_menu([
-					'menu'           => 'Footer menu', // O nome da localização do menu definido no functions.php
-					'menu_class'     => 'grid lg:grid-cols-4 gap-y-8', // Classes CSS para estilização
-					'container'      => false, // Remove o container <div> padrão
-					'fallback_cb'    => false // Evita exibir um menu vazio se não estiver configurado
+					'menu'           => 'Footer menu',
+					'menu_class'     => 'grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-y-8 lg:gap-x-0',
+					'container'      => false,
+					'fallback_cb'    => false
 				]);
 				?>
 			</nav>
@@ -38,4 +54,5 @@
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
