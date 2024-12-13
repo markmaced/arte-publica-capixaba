@@ -19,10 +19,10 @@
 			<nav class="footer-nav">
 				<?php
 				wp_nav_menu([
-					'menu'           => 'Footer menu', // O nome da localização do menu definido no functions.php
-					'menu_class'     => 'grid lg:grid-cols-4 gap-y-8', // Classes CSS para estilização
-					'container'      => false, // Remove o container <div> padrão
-					'fallback_cb'    => false // Evita exibir um menu vazio se não estiver configurado
+					'menu'           => 'Footer menu',
+					'menu_class'     => 'grid lg:grid-cols-4 gap-y-8',
+					'container'      => false,
+					'fallback_cb'    => false
 				]);
 				?>
 			</nav>
