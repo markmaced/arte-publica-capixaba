@@ -2,24 +2,20 @@
     <div class="max-w-screen-tainacan mx-auto px-8 lg:px-0">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 lg:justify-between">
             <div class="grid grid-cols-6 gap-4 lg:gap-6">
-                <div class="h-28 col-span-2 lg:h-64 lg:col-span-3">
-                    <img src="<?php echo get_template_directory_uri(  ) . '/resources/images/img-model-1.png' ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">
+                <?php 
+                
+                $random_items = get_random_items_with_images();
+                $i = 1;
+                foreach ($random_items as $item):
+                ?>
+                <?php $col_span = ($i == 1 || $i == 3) ? 'lg:col-span-3' : '';?>
+                <?php $height = ($i == 1 || $i == 3) ? 'lg:h-64' : 'lg:h-44';?>
+                <?php $hidden = $i == 2 ? 'lg:hidden' : '';?>
+                <div class="h-28 col-span-2 <?php echo $col_span . ' ' . $hidden . ' ' . $height?>">
+                    <img src="<?php echo $item['image_url'] ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">
                 </div>
-                <div class="h-28 col-span-2 lg:h-44 lg:hidden">
-                    <img src="<?php echo get_template_directory_uri(  ) . '/resources/images/img-model-1.png' ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">   
-                </div>
-                <div class="h-28 col-span-2 lg:h-64 lg:col-span-3">
-                    <img src="<?php echo get_template_directory_uri(  ) . '/resources/images/img-model-2.png' ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">
-                </div>
-                <div class="h-28 col-span-2 lg:h-44 ">
-                    <img src="<?php echo get_template_directory_uri(  ) . '/resources/images/img-model-1.png' ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">
-                </div>
-                <div class="h-28 col-span-2 lg:h-44 ">
-                    <img src="<?php echo get_template_directory_uri(  ) . '/resources/images/img-model-2.png' ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">
-                </div>
-                <div class="h-28 col-span-2 lg:h-44 ">
-                    <img src="<?php echo get_template_directory_uri(  ) . '/resources/images/img-model-2.png' ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">
-                </div>
+                <?php $i++; ?>
+                <?php endforeach ?>
             </div>
             <div class="lg:order-first">
                 <h1 class="w-3/4 font-black text-4xl lg:text-6xl mb-4 text-black font-lato">o repositório da arte pública capixaba</h1>
@@ -182,108 +178,9 @@
                 <p class="text-subtitle-gray group-hover:text-white">Conheça a definição de termos frequentemente mencionados em nosso site.</p>
             </a>
         </div>
-        <!--
-        <div class="w-full flex gap-3 mb-5">
-            <div class="w-1/4 py-10 px-5 shadow-soft-shadow rounded-lg">
-                <div class="flex gap-3 items-center">
-                    <h2 class="text-2xl font-bold flex gap-3 mb-2">O projeto</h2>
-                    <svg width="10" height="19" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="text-black">
-                        <path
-                            d="M2.025 21.1913L0.0587463 19.2251L8.28375 11.0001L0.0587463 2.77509L2.025 0.808838L12.2162 11.0001L2.025 21.1913Z"
-                            class="fill-black" />
-                    </svg>
-                </div>
-                <p class="text-base font-normal text-grafitti">Conheça a história do projeto, seus idealizadores e
-                    membros.</p>
-            </div>
-            <div class="w-1/4 py-10 px-5 shadow-soft-shadow rounded-lg">
-                <div class="flex gap-3 items-center">
-                    <h2 class="text-2xl font-bold flex gap-3 mb-2">Acervo</h2>
-                    <svg width="10" height="19" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="text-black">
-                        <path
-                            d="M2.025 21.1913L0.0587463 19.2251L8.28375 11.0001L0.0587463 2.77509L2.025 0.808838L12.2162 11.0001L2.025 21.1913Z"
-                            class="fill-black" />
-                    </svg>
-                </div>
-                <p class="text-base font-normal text-grafitti">Acesse as coleções e obras capixabas levantadas pelo
-                    projeto.</p>
-            </div>
-            <div class="w-1/4 py-10 px-5 shadow-soft-shadow rounded-lg">
-                <div class="flex gap-3 items-center">
-                    <h2 class="text-2xl font-bold flex gap-3 mb-2">Biblioteca Virtual</h2>
-                    <svg width="10" height="19" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="text-black">
-                        <path
-                            d="M2.025 21.1913L0.0587463 19.2251L8.28375 11.0001L0.0587463 2.77509L2.025 0.808838L12.2162 11.0001L2.025 21.1913Z"
-                            class="fill-black" />
-                    </svg>
-                </div>
-                <p class="text-base font-normal text-grafitti">Acesse as coleções e obras capixabas levantadas pelo
-                    projeto.</p>
-            </div>
-            <div class="w-1/4 py-10 px-5 shadow-soft-shadow rounded-lg">
-                <div class="flex gap-3 items-center">
-                    <h2 class="text-2xl font-bold flex gap-3 mb-2">Itinerários temáticos</h2>
-                    <svg width="10" height="19" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="text-black">
-                        <path
-                            d="M2.025 21.1913L0.0587463 19.2251L8.28375 11.0001L0.0587463 2.77509L2.025 0.808838L12.2162 11.0001L2.025 21.1913Z"
-                            class="fill-black" />
-                    </svg>
-                </div>
-                <p class="text-base font-normal text-grafitti">Acesse sugestões de itinerários pelos municípios, de
-                    maneira a conhecer algumas obras. (Em breve)</p>
-            </div>
-        </div>
-        <div class="w-full flex gap-3">
-            <div class="w-1/4 py-10 px-5 shadow-soft-shadow rounded-lg">
-                <div class="flex gap-3 items-center">
-                    <h2 class="text-2xl font-bold flex gap-3 mb-2">Educativo</h2>
-                    <svg width="10" height="19" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="text-black">
-                        <path
-                            d="M2.025 21.1913L0.0587463 19.2251L8.28375 11.0001L0.0587463 2.77509L2.025 0.808838L12.2162 11.0001L2.025 21.1913Z"
-                            class="fill-black" />
-                    </svg>
-                </div>
-                <p class="text-base font-normal text-grafitti">Materiais preparados para professores do Ensino Básico,
-                    para auxílio em sala de aula. (Em breve)</p>
-            </div>
-            <div class="w-1/4 py-10 px-5 shadow-soft-shadow rounded-lg">
-                <div class="flex gap-3 items-center">
-                    <h2 class="text-2xl font-bold flex gap-3 mb-2">Glossário</h2>
-                    <svg width="10" height="19" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="text-black">
-                        <path
-                            d="M2.025 21.1913L0.0587463 19.2251L8.28375 11.0001L0.0587463 2.77509L2.025 0.808838L12.2162 11.0001L2.025 21.1913Z"
-                            class="fill-black" />
-                    </svg>
-                </div>
-                <p class="text-base font-normal text-grafitti">Conheça a definição de termos frequentemente mencionados
-                    em nosso site.</p>
-            </div>
-            <div class="w-1/4 py-10 px-5 shadow-soft-shadow rounded-lg">
-                <div class="flex gap-3 items-center">
-                    <h2 class="text-2xl font-bold flex gap-3 mb-2">Colabore</h2>
-                    <svg width="10" height="19" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        class="text-black">
-                        <path
-                            d="M2.025 21.1913L0.0587463 19.2251L8.28375 11.0001L0.0587463 2.77509L2.025 0.808838L12.2162 11.0001L2.025 21.1913Z"
-                            class="fill-black" />
-                    </svg>
-                </div>
-                <p class="text-base font-normal text-grafitti">Faça sua contribuição de uma nova obra não mapeada em
-                    nosso acervo. (Em breve)</p>
-            </div>
-            <div class="w-1/4">
-            </div>
-        </div>
-        -->
+        
     </div>
 </section>
-
 <section class="w-full py-20 font-lato bg-light-gray lg:bg-white">
     <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
         <h2 class="text-title-gray text-4xl font-black mb-8 lg:mb-10">Contato</h2>

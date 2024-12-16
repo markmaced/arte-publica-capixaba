@@ -33,22 +33,6 @@
         <div class="flex flex-col lg:flex-row items-center">
             <label class="lg:mr-6 mb-12 lg:mb-0 text-2xl font-medium text-subtitle-gray">Pesquisar</label>
             <div class="flex flex-1 space-x-6 lg:m-0">
-                <!-- <div>
-                    <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-3 px-4 text-sm font-medium text-center text-subtitle-gray bg-light-gray rounded-lg focus:ring-4 focus:outline-none focus:ring-gray-100 shadow-common-shadow" type="button">cidade<svg class="w-2.5 h-2.5 ms-2.5 text-subtitle-gray" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                    </button>
-                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-common-shadow w-44">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-                            <li>
-                                <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Cidade</button>
-                            </li>
-                            <li>
-                                <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100">Estado</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
                 <div x-data="{ isOpen: false, openedWithKeyboard: false }" class="relative" @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
                     <button type="button" @click="isOpen = ! isOpen" class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap text-subtitle-gray bg-light-gray rounded-lg px-5 py-3 text-sm font-medium shadow-common-shadow transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800" aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true" @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true" :class="isOpen || openedWithKeyboard ? 'text-neutral-900' : 'text-neutral-600'" :aria-expanded="isOpen || openedWithKeyboard">
                         Cidade
