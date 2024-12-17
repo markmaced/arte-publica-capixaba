@@ -36,7 +36,7 @@
 		<header class="menu-header">
 				<nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class="bg-light-gray border px-6 py-4" aria-label="penguin ui menu">
 					<div class="max-w-screen-tainacan mx-auto flex items-center justify-between">
-						<a href="#" class="">
+						<a href="/" class="">
 							<img class="w-14" src="/wp-content/themes/tainacan-theme/resources/images/arte-publica-logo.png">
 						</a>
 						<ul class="hidden items-center gap-4 md:flex">

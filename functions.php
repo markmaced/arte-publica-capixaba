@@ -128,6 +128,8 @@ $functions_path = get_template_directory() . '/functions/';
 require_once($functions_path . 'theme-options.php');
 require_once($functions_path . 'search-collections.php');
 require_once($functions_path . 'random-items-collections.php');
+require_once($functions_path . 'breadcrumbs.php');
+require_once($functions_path . 'tipo-de-ficha.php');
 require_once($functions_path . 'log-to-file.php');
 
 global $urlapi; $urlapi = "https://www.artepublicacapixaba.com.br";
