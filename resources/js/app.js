@@ -45,3 +45,6 @@ document.addEventListener("alpine:init", () => {
             }
       }));
 });
+
+jQuery(document).ready(function ($) {
+});
