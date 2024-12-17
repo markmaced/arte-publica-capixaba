@@ -12,7 +12,9 @@
                 <?php $height = ($i == 1 || $i == 3) ? 'lg:h-64' : 'lg:h-44';?>
                 <?php $hidden = $i == 2 ? 'lg:hidden' : '';?>
                 <div class="h-28 col-span-2 <?php echo $col_span . ' ' . $hidden . ' ' . $height?>">
-                    <img src="<?php echo $item['image_url'] ?>" class="w-full h-full object-fill transform transition-transform duration-300 ease-in-out hover:scale-110">
+                    <a href="<?php echo $item['url'] ?>">
+                        <img src="<?php echo $item['image_url'] ?>" class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110">
+                    </a>
                 </div>
                 <?php $i++; ?>
                 <?php endforeach ?>
@@ -23,7 +25,7 @@
                     Pesquisa em Artes da UFES, este site foi idealizado por José Cirillo, Marcela Belo e Ciliani Celante
                     a fim de compartilhar o Banco de Dados do LEENA sobre monumentos e intervenções públicas do
                     ecossistema urbano capixaba.</p>
-                <a class="inline-flex px-5 py-3 bg-logo-blue text-white rounded-lg text-base font-bold" href="#">Acesse o Acervo</a>
+                <a class="inline-flex px-5 py-3 bg-logo-blue text-white rounded-lg text-base font-bold" href="/acervo">Acesse o Acervo</a>
             </div>
         </div>
     </div>
@@ -101,7 +103,7 @@
                         A expectativa é que este portal seja uma fonte de pesquisa para alunos, professores e a comunidade capixaba em geral. À medida que a pesquisa for avançando passará por constantes atualizações.
                     </p>
                 </div>
-                <a class="px-6 py-4 font-inter bg-logo-blue text-white rounded-2xl font-bold inline-flex hover:shadow-soft-shadow" href="#">Acesse o acervo</a>
+                <a class="px-6 py-4 font-inter bg-logo-blue text-white rounded-2xl font-bold inline-flex hover:shadow-soft-shadow" href="/acervo">Acesse o acervo</a>
             </div>
         </div>
     </div>
@@ -122,7 +124,7 @@
                 </div>
                 <p class="text-subtitle-gray group-hover:text-white">Conheça a história do projeto, seus idealizadores e membros.</p>
             </a>
-            <a href="#" class="p-6 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+            <a href="/acervo" class="p-6 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Acervo</h5>
                     <div>
@@ -133,7 +135,7 @@
                 </div>
                 <p class="text-subtitle-gray group-hover:text-white">Acesse as coleções e obras capixabas levantadas pelo projeto.</p>
             </a>
-            <a href="#" class="p-6 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+            <a href="/biblioteca-virtual" class="p-6 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Biblioteca Virtual</h5>
                     <div>

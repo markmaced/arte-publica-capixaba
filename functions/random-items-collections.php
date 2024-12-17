@@ -35,7 +35,8 @@ function get_random_items_with_images()
                 if ($image_url) {
                     $random_items[] = [
                         'id' => $item[$i]['id'],
-                        'image_url' => $image_url
+                        'image_url' => $image_url,
+                        'url' => $item[$i]['url']
                     ];
                 }
             }
