@@ -41,7 +41,7 @@ article > *:not(.entry-content),
     }
 }
 
-input:focus-visible {
+.input:focus-visible {
     outline: #378CCA auto 1px !important;
 }
 
