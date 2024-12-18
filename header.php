@@ -19,20 +19,6 @@
 	<div id="page" class="min-h-screen flex flex-col">
 
 		<?php do_action('tailpress_header'); ?>
-
-		<!-- <header class="bg-light-gray w-full py-4 font-lato">
-			<div class="w-full max-w-screen-tainacan mx-auto">
-				<div class="w-full flex">
-					<div class="w-2/5 flex items-center">
-						<img class="w-14" src="/wp-content/themes/tainacan-theme/resources/images/arte-publica-logo.png">
-					</div>
-					<div class="w-3/5 flex items-center">
-						c
-					</div>
-				</div>
-			</div>
-		</header>
-		-->
 		<header class="menu-header">
 				<nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class="bg-light-gray border px-6 py-4" aria-label="penguin ui menu">
 					<div class="max-w-screen-tainacan mx-auto flex items-center justify-between">
@@ -41,13 +27,7 @@
 						</a>
 						<ul class="hidden items-center gap-4 md:flex">
 							<?php
-								wp_nav_menu(array(
-									'theme_location' => 'menu-principal',
-									'container' => 'nav',
-									'container_class' => 'menu-container',
-									'menu_class' => 'md:flex items-center gap-6',
-									'fallback_cb' => false,
-								));
+								wp_nav_menu( array( 'container_id'    => 'primary-menu', 'container_class' => 'hidden !font-lato uppercase bg-light-gray mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block', 'menu_class'      => 'lg:flex lg:-mx-4', 'theme_location'  => 'menu-principal', 'li_class'        => 'lg:mx-4 py-2 hover:underline', 'li_class_0'      => 'lg:mx-4 py-4 lg:relative group', 'submenu_class'   => 'lg:hidden group-hover:block lg:absolute lg:left-0 lg:z-10 lg:rounded-lg lg:max-w-72 lg:gap-0 bg-light-gray transition duration-300 shadow-soft-shadow pt-4 whitespace-nowrap mt-4 p-4 block', 'fallback_cb'     => false, ));
 							?>
 						</ul>
 						<button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button" class="flex text-neutral-600 dark:text-neutral-300 md:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
@@ -60,13 +40,7 @@
 						</button>
 						<ul x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-md border-b border-neutral-300 bg-neutral-50 px-6 pb-6 pt-20 md:hidden shadow-soft-shadow">
 							<?php
-								wp_nav_menu(array(
-									'theme_location' => 'menu-principal',
-									'container' => 'nav',
-									'container_class' => 'menu-container',
-									'menu_class' => 'flex flex-col divide-y divide-neutral-300',
-									'fallback_cb' => false,
-								));
+								wp_nav_menu( array( 'container_id'    => 'primary-menu', 'container_class' => '!font-lato uppercase flex flex-col gap-4', 'menu_class'      => 'lg:-my-4 divide-y', 'theme_location'  => 'menu-principal', 'li_class'        => 'py-1 pl-2', 'li_class_0'      => 'py-4', 'submenu_class'   => '', 'fallback_cb'     => false, ));
 							?>
 						</ul>
 					</div>

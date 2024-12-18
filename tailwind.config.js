@@ -55,5 +55,6 @@ module.exports = {
     },
     plugins: [
         tailpress.tailwind
-    ]
+    ],
+    variants: { extend: { display: ["group-hover"] } }
 };
