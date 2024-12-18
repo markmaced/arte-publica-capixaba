@@ -48,9 +48,9 @@ function tailpress_enqueue_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
-	// wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
-	// wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
-	// wp_add_inline_script('aos-js', 'AOS.init();');
+	wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
+	wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
+	wp_add_inline_script('aos-js', 'AOS.init();');
 	wp_localize_script(
 		'tailpress',
 		'wpurl',
