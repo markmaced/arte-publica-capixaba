@@ -7,14 +7,7 @@
   \*****************************/
 /***/ (() => {
 
-// Navigation toggle
 window.addEventListener('load', function () {
-  // let main_navigation = document.querySelector('#primary-menu');
-  // document.querySelector('#primary-menu-toggle').addEventListener('click', function (e) {
-  //       e.preventDefault();
-  //       main_navigation.classList.toggle('hidden');
-  // });
-
   var swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     slidesPerView: 'auto',
@@ -52,32 +45,14 @@ document.addEventListener("alpine:init", function () {
     };
   });
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//       // Seleciona todos os itens do menu com submenus
-//       const menuItems = document.querySelectorAll("li.menu-item-has-children");
-
-//       menuItems.forEach(item => {
-//             item.appendChild();
-//       });
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Seleciona todos os itens do menu com submenus
   var menuItems = document.querySelectorAll("#mobileMenu li.menu-item-has-children");
   menuItems.forEach(function (item) {
-    // Seleciona o submenu do item atual
     var submenu = item.querySelector(".sub-menu");
     if (submenu) {
-      // Inicializa o estado escondido usando classes de Tailwind
       submenu.classList.add("h-0", "opacity-0", "overflow-hidden", "transition", "duration-500");
-
-      // Adiciona o evento de clique no próprio <li>
       item.addEventListener("click", function (e) {
-        // Evita propagação caso o submenu também tenha eventos
         e.stopPropagation();
-
-        // Alterna as classes para exibir/ocultar o submenu
         submenu.classList.toggle("h-0");
         submenu.classList.toggle("opacity-0");
         submenu.classList.toggle("overflow-hidden");
@@ -86,7 +61,53 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-jQuery(document).ready(function ($) {});
+jQuery(document).ready(function ($) {
+  function filterLibrary(filters) {
+    console.log(filters);
+    $.ajax({
+      url: wpurl.ajax,
+      dataType: 'json',
+      type: 'post',
+      data: {
+        action: 'filter_library',
+        search: filters.search,
+        tipoDeFicha: filters.tipoDeFicha
+      },
+      success: function success(response) {
+        $('#libraryItems').html(response.data);
+        Swal.close();
+      },
+      error: function error(xhr, exception, _error) {
+        console.log(_error);
+        Swal.close();
+      }
+    });
+  }
+  function getFiltersAndSearch() {
+    return {
+      search: $('#searchFilter').val(),
+      tipoDeFicha: $('#tipoDeFicha').val()
+    };
+  }
+  function showLoading() {
+    Swal.fire({
+      title: 'Carregando',
+      text: 'Pesquisando na biblioteca...',
+      allowOutsideClick: false,
+      didOpen: function didOpen() {
+        Swal.showLoading();
+      }
+    });
+  }
+  $(document).on('click', '#searchBtn', function () {
+    showLoading();
+    filterLibrary(getFiltersAndSearch());
+  });
+  $(document).on('change', '#tipoDeFicha', function () {
+    showLoading();
+    filterLibrary(getFiltersAndSearch());
+  });
+});
 
 /***/ }),
 
