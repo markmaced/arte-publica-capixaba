@@ -9,11 +9,11 @@
 <footer id="colophon" class="site-footer" role="contentinfo"
 	x-data="{
           reorderMenu() {
-            const menu = document.getElementById('menu-footer-menu');
-            const item23 = document.getElementById('menu-item-23');
-            if (menu && item23) {
+            const menu = document.getElementById('menu-menu-footer');
+            const item = document.getElementById('menu-item-60318');
+            if (menu && item) {
               if (window.innerWidth < 969) {
-                menu.appendChild(item23);
+                menu.appendChild(item);
               }
             }
           }
@@ -35,7 +35,7 @@
 			<nav class="footer-nav">
 				<?php
 				wp_nav_menu([
-					'menu'           => 'Footer menu',
+					'menu'           => 'Menu footer',
 					'menu_class'     => 'grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-y-8 lg:gap-x-0',
 					'container'      => false,
 					'fallback_cb'    => false

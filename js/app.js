@@ -52,6 +52,40 @@ document.addEventListener("alpine:init", function () {
     };
   });
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//       // Seleciona todos os itens do menu com submenus
+//       const menuItems = document.querySelectorAll("li.menu-item-has-children");
+
+//       menuItems.forEach(item => {
+//             item.appendChild();
+//       });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleciona todos os itens do menu com submenus
+  var menuItems = document.querySelectorAll("#mobileMenu li.menu-item-has-children");
+  menuItems.forEach(function (item) {
+    // Seleciona o submenu do item atual
+    var submenu = item.querySelector(".sub-menu");
+    if (submenu) {
+      // Inicializa o estado escondido usando classes de Tailwind
+      submenu.classList.add("h-0", "opacity-0", "overflow-hidden", "transition", "duration-500");
+
+      // Adiciona o evento de clique no próprio <li>
+      item.addEventListener("click", function (e) {
+        // Evita propagação caso o submenu também tenha eventos
+        e.stopPropagation();
+
+        // Alterna as classes para exibir/ocultar o submenu
+        submenu.classList.toggle("h-0");
+        submenu.classList.toggle("opacity-0");
+        submenu.classList.toggle("overflow-hidden");
+        submenu.classList.toggle("mt-2");
+      });
+    }
+  });
+});
 jQuery(document).ready(function ($) {});
 
 /***/ }),

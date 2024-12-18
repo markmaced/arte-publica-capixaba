@@ -45,6 +45,12 @@ article > *:not(.entry-content),
     outline: #378CCA auto 1px !important;
 }
 
+@media screen and (max-width: 969px) {
+}
+
+
+
+
 input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
     border: 1px solid #CCCCCC;
     border-radius: 8px;
@@ -108,9 +114,11 @@ input.wpcf7-form-control.wpcf7-submit.has-spinner {
 
 /* Menu Header */
 
+/* 
+@media screen and (max-width: 969px) {
 header.menu-header nav li {
-    padding-top: 1rem /* 16px */;
-    padding-bottom: 1rem /* 16px */;
+    padding-top: 1rem;
+    padding-bottom: 1rem ;
 }
 
 header.menu-header nav li a {
@@ -127,6 +135,8 @@ header.menu-header nav li a {
 header.menu-header nav li a:focus {
     text-decoration: underline;
 }
+}
+ */
 
 /* Menu Footer */
 
