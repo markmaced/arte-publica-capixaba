@@ -68,8 +68,8 @@
                     <div class="w-full">
                         <img class="w-full max-w-full lg:h-80 shadow-soft-shadow rounded-lg object-cover mb-4 h-56"
                             src="<?php the_post_thumbnail_url(); ?>">
-                        <h3 class="text-title-gray text-base font-bold mb-2"><?php echo the_title() ?></h3>
-                        <p class="text-subtitle-gray mb-4 text-sm font-normal"><?php echo $groupData['autores'] ?></p>
+                        <h3 class="text-title-gray text-base font-bold mb-2 line-clamp-2"><?php echo the_title() ?></h3>
+                        <p class="text-subtitle-gray mb-4 text-sm font-normal line-clamp-1"><?php echo $groupData['autores'] ?></p>
                         <div class="w-full">
                             <a class="px-5 py-2 bg-white font-inter text-logo-blue border border-logo-blue rounded-lg text-sm font-bold transition-all duration-500 hover:bg-logo-blue hover:text-white"
                                 href="<?php echo get_permalink(); ?>">Mais detalhes</a>
