@@ -44,11 +44,11 @@ function get_random_items_with_images()
             $i++;
         }
 
-        if (count($random_items) >= 6) {
+        if (count($random_items) >= 12) {
             break;
         }
     }
 
     shuffle($random_items);
-    return array_slice($random_items, 0, 6);
+    return array_slice($random_items, 0, 12);
 }
