@@ -9,7 +9,7 @@ $collection = get_queried_object();
 			<h2 class="text-4xl font-black text-title-gray mb-4"><?php echo $collection->label ?></h2>
 
 			<p class="lg:overflow-x-auto lg:whitespace-nowrap">
-				<a href="#" class="text-preto-60 hover:underline">
+				<a href="/acervo" class="text-preto-60 hover:underline">
 					Acervo
 				</a>
 
@@ -17,9 +17,9 @@ $collection = get_queried_object();
 					>
 				</span>
 
-				<a href="#" class="text-preto-60 hover:underline">
+				<span class="text-preto-60 hover:underline">
 					Obras em Espirito Santo
-				</a>
+				</span>
 
 				<span class="mx-2 text-preto-60 rtl:-scale-x-100">
 					>
@@ -78,8 +78,9 @@ $collection = get_queried_object();
 								<?php 
 									$meta = get_post_meta( get_the_ID(  ));
 								?>
+								<?php log_to_file(print_r(wp_get_attachment_image_url($meta['_thumbnail_id'][0]) , true));?>
 								<a href="<?php echo the_permalink() ?>" class="flex flex-row items-center bg-light-gray rounded-lg shadow-common-shadow">
-									<?php $image_url = wp_get_attachment_image_url(isset($meta['_thumbnail_id'][0]), 'full'); ?>
+									<?php $image_url = wp_get_attachment_image_url($meta['_thumbnail_id'][0], 'full'); ?>
 									<img class="object-cover w-full rounded-tl-lg h-32 max-w-36 rounded-bl-lg"
 										src="<?php echo $image_url ?>"
 										alt="">

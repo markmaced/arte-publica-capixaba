@@ -133,5 +133,6 @@ require_once($functions_path . 'breadcrumbs.php');
 require_once($functions_path . 'tipo-de-ficha.php');
 require_once($functions_path . 'filter-library.php');
 require_once($functions_path . 'log-to-file.php');
+require_once($functions_path). 'get-cities-by-region-with-links.php';
 
 global $urlapi; $urlapi = "https://www.artepublicacapixaba.com.br";
