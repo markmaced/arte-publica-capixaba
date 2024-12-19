@@ -61,6 +61,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// leaflet
+document.addEventListener("DOMContentLoaded", function () {
+  var mapElement = document.getElementById('map');
+  var lat = parseFloat(mapElement.dataset.lat) || -20.3155; // Latitude padrão
+  var _long = parseFloat(mapElement.dataset["long"]) || -40.3128; // Longitude padrão
+  var mapsLink = mapElement.dataset.maps; // Link do Google Maps
+
+  var map = L.map('map').setView([lat, _long], 11);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: "&copy; <a href=\"".concat(mapsLink, "\" target=\"_blank\">Abrir no Google Maps</a>")
+  }).addTo(map);
+  var marker = L.marker([lat, _long]).addTo(map);
+});
 jQuery(document).ready(function ($) {
   function filterLibrary(filters) {
     console.log(filters);
