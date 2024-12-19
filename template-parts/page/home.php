@@ -1,12 +1,15 @@
 <section class="w-full bg-medium-gray py-20">
     <div class="max-w-screen-tainacan mx-auto px-8 lg:px-0">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 lg:justify-between">
-            <div class="grid grid-cols-6 gap-4 lg:gap-6">
+            <div class="grid grid-cols-6 gap-4 lg:gap-6" data-aos="fade-in">
                 <?php
 
                 $random_items = get_random_items_with_images();
                 $i = 1;
                 foreach ($random_items as $item):
+                    if ($i == 7) {
+                        break;
+                    }
                     ?>
                     <?php $col_span = ($i == 1 || $i == 3) ? 'lg:col-span-3' : ''; ?>
                     <?php $height = ($i == 1 || $i == 3) ? 'lg:h-64' : 'lg:h-44'; ?>
@@ -55,7 +58,7 @@
     );
     $loopDestaques = new WP_Query($argsDestaques);
     ?>
-    <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
+    <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0" data-aos="fade-up">
         <div class="mb-9 lg:mb-14">
             <h2 class="text-title-gray text-4xl font-black mb-4 lg:mb-6">Biblioteca Virtual</h2>
             <p class="text-lg text-black font-normal">Acesse livros e publicações criadas a partir de pesquisas...</p>
@@ -68,8 +71,8 @@
                     <div class="w-full">
                         <img class="w-full max-w-full lg:h-80 shadow-soft-shadow rounded-lg object-cover mb-4 h-56"
                             src="<?php the_post_thumbnail_url(); ?>">
-                        <h3 class="text-title-gray text-base font-bold mb-2"><?php echo the_title() ?></h3>
-                        <p class="text-subtitle-gray mb-4 text-sm font-normal"><?php echo $groupData['autores'] ?></p>
+                        <h3 class="text-title-gray text-base font-bold mb-2 line-clamp-2"><?php echo the_title() ?></h3>
+                        <p class="text-subtitle-gray mb-4 text-sm font-normal line-clamp-1"><?php echo $groupData['autores'] ?></p>
                         <div class="w-full">
                             <a class="px-5 py-2 bg-white font-inter text-logo-blue border border-logo-blue rounded-lg text-sm font-bold transition-all duration-500 hover:bg-logo-blue hover:text-white"
                                 href="<?php echo get_permalink(); ?>">Mais detalhes</a>
@@ -90,21 +93,42 @@
 <section class="w-full bg-medium-gray py-20 font-lato">
     <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
         <div class="w-full flex">
-            <div class="lg:w-1/3">
-                <h2 class="font-black text-4xl mb-6 text-black">Arte Pública <br>Capixaba</h2>
-                <div class="mb-10 space-y-3">
-                    <p class="text-black">
-                        Nesse site podem ser acessados conteúdos como fotografias das obras de arte públicas em diversas
-                        modalidades, além da produção bibliográfica produzida por pesquisadores da área.
-                    </p>
-                    <p class="text-black">
-                        A expectativa é que este portal seja uma fonte de pesquisa para alunos, professores e a
-                        comunidade capixaba em geral. À medida que a pesquisa for avançando passará por constantes
-                        atualizações.
-                    </p>
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 lg:justify-between">
+                <div class="grid grid-cols-6 gap-4 lg:gap-6" data-aos="fade-in">
+                    <?php
+                    $i = 7;
+                    $items_from_seventh = array_slice($random_items, 6);
+                    foreach ($items_from_seventh as $item):
+                        ?>
+                        <?php $col_span = ($i == 7 || $i == 9) ? 'lg:col-span-3' : ''; ?>
+                        <?php $height = ($i == 7 || $i == 9) ? 'lg:h-64' : 'lg:h-44'; ?>
+                        <?php $hidden = $i == 8 ? 'lg:hidden' : ''; ?>
+                        <div class="h-28 col-span-2 <?php echo $col_span . ' ' . $hidden . ' ' . $height ?>">
+                            <a href="<?php echo $item['url'] ?>">
+                                <img src="<?php echo $item['image_url'] ?>"
+                                    class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110">
+                            </a>
+                        </div>
+                        <?php $i++; ?>
+                    <?php endforeach ?>
                 </div>
-                <a class="px-6 py-4 font-inter bg-logo-blue text-white rounded-2xl font-bold inline-flex hover:shadow-soft-shadow"
-                    href="/acervo">Acesse o acervo</a>
+                <div class="lg:order-first">
+                    <h2 class="font-black text-4xl mb-6 text-black">Arte Pública <br>Capixaba</h2>
+                    <div class="mb-10 space-y-3">
+                        <p class="text-black">
+                            Nesse site podem ser acessados conteúdos como fotografias das obras de arte públicas em
+                            diversas
+                            modalidades, além da produção bibliográfica produzida por pesquisadores da área.
+                        </p>
+                        <p class="text-black">
+                            A expectativa é que este portal seja uma fonte de pesquisa para alunos, professores e a
+                            comunidade capixaba em geral. À medida que a pesquisa for avançando passará por constantes
+                            atualizações.
+                        </p>
+                    </div>
+                    <a class="px-6 py-4 font-inter bg-logo-blue text-white rounded-2xl font-bold inline-flex hover:shadow-soft-shadow"
+                        href="/acervo">Acesse o acervo</a>
+                </div>
             </div>
         </div>
     </div>
@@ -112,8 +136,8 @@
 
 <section class="w-full py-20 font-lato">
     <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
-        <h2 class="text-title-gray text-4xl font-black mb-6 lg:mb-10">Mapa do site</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8">
+        <h2 class="text-title-gray text-4xl font-black mb-6 lg:mb-10" data-aos="fade-up">Mapa do site</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8" data-aos="fade-up">
             <a href="#"
                 class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow rounded-2xl border border-medium-gray group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">

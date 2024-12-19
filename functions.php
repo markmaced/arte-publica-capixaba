@@ -44,13 +44,14 @@ function tailpress_enqueue_scripts() {
 	$theme = wp_get_theme();
 
 	wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array('jquery'), $theme->get( 'Version' ) );
 	wp_enqueue_script('jquery');
 	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
-	// wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
-	// wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
-	// wp_add_inline_script('aos-js', 'AOS.init();');
+	wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
+	wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
+	wp_add_inline_script('aos-js', 'AOS.init();');
+	wp_enqueue_script('sweetAlert' , 'https://cdn.jsdelivr.net/npm/sweetalert2@11');
 	wp_localize_script(
 		'tailpress',
 		'wpurl',
@@ -130,6 +131,7 @@ require_once($functions_path . 'search-collections.php');
 require_once($functions_path . 'random-items-collections.php');
 require_once($functions_path . 'breadcrumbs.php');
 require_once($functions_path . 'tipo-de-ficha.php');
+require_once($functions_path . 'filter-library.php');
 require_once($functions_path . 'log-to-file.php');
 
 global $urlapi; $urlapi = "https://www.artepublicacapixaba.com.br";
