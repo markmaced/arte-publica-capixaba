@@ -78,7 +78,6 @@ $collection = get_queried_object();
 								<?php 
 									$meta = get_post_meta( get_the_ID(  ));
 								?>
-								<?php log_to_file(print_r(wp_get_attachment_image_url($meta['_thumbnail_id'][0]) , true));?>
 								<a href="<?php echo the_permalink() ?>" class="flex flex-row items-center bg-light-gray rounded-lg shadow-common-shadow">
 									<?php $image_url = wp_get_attachment_image_url($meta['_thumbnail_id'][0], 'full'); ?>
 									<img class="object-cover w-full rounded-tl-lg h-32 max-w-36 rounded-bl-lg"

@@ -36,6 +36,5 @@ function get_items_by_region($region)
             ];
         }
     }
-    log_to_file(print_r($itemsByRegion , true));
     return $itemsByRegion;
 }
