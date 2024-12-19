@@ -1,7 +1,4 @@
 <?php
-$batata = search_collections_api();
-
-var_dump($batata);
 ?>
 
 <div class="max-w-screen-tainacan-lg mx-auto py-20 lg:px-0 !font-lato">
