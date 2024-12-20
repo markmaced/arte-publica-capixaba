@@ -1599,6 +1599,11 @@ video {
     color: rgb(102 102 102 / var(--tw-text-opacity));
 }
 
+.text-red-600{
+    --tw-text-opacity: 1;
+    color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
 .text-subtitle-gray{
     --tw-text-opacity: 1;
     color: rgb(77 77 77 / var(--tw-text-opacity));
