@@ -13,6 +13,8 @@
 				$item = tainacan_get_item(get_the_ID());
 				$meta = get_post_meta(get_the_ID());
 				$collection = tainacan_get_collection();
+				$attachments = tainacan_get_the_attachments(get_the_ID());
+
 				?>
 				<div class="px-6 lg:px-0 mx-auto max-w-screen-tainacan w-full">
 					<h2 class="text-4xl font-black text-title-gray mb-4"><?php the_title(); ?></h2>
@@ -42,52 +44,49 @@
 					</p>
 				</div>
 
-				<div class="!overflow-hidden">
-					<!-- Desktop -->
-					<div class="hidden lg:grid grid-cols-5 grid-rows-2 gap-5">
-						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray row-span-2 col-span-2">
-							<img src="" alt="" class="w-full h-full min-h-[200px] object-cover rounded-lg bg-light-gray">
-						</div>
-						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
-							<img src="" alt="" class="w-full h-[200px] object-cover rounded-lg bg-light-gray">
-						</div>
-						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
-							<img src="" alt="" class="w-full h-[200px] object-cover rounded-lg bg-light-gray">
-						</div>
-						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
-							<img src="" alt="" class="w-full h-[200px] object-cover rounded-lg bg-light-gray">
-						</div>
-						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
-							<img src="" alt="" class="w-full h-[200px] object-cover rounded-lg bg-light-gray">
-						</div>
-						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
-							<img src="" alt="" class="w-full h-[200px] object-cover rounded-lg bg-light-gray">
-						</div>
-						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
-							<img src="" alt="" class="w-full h-[200px] object-cover rounded-lg bg-light-gray">
-						</div>
-					</div>
+				<?php if (!empty($attachments)) : ?>
+					<div class="!overflow-hidden">
+						<!-- Desktop -->
+						<div class="hidden lg:grid grid-cols-5 grid-rows-2 gap-5">
+							<?php
+							$counter = 1;
 
-
-					<!-- Mobile -->
-
-					<div class="lg:hidden">
-						<div class="swiper !overflow-visible !h-[420px] !py-6 !px-6 ">
-							<div class="swiper-wrapper">
-								<!-- Slides -->
-								<div class="swiper-slide !w-3/5 rounded-lg shadow-soft-shadow bg-light-gray">
-									<img src="" alt="" class="object-cover rounded-lg">
+							foreach ($attachments as $attachment) {
+								$attachment_url = wp_get_attachment_url($attachment->ID);
+								$grid_class = ($counter === 1) ? 'row-span-2 col-span-2' : '';
+							?>
+								<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray <?php echo $grid_class; ?>">
+									<img src="<?php echo esc_url($attachment_url); ?>"
+										alt="<?php echo esc_attr($attachment->post_title); ?>"
+										class="w-full <?php echo ($counter === 1) ? 'h-full min-h-[200px]' : 'h-[200px]'; ?> object-cover rounded-lg bg-light-gray">
 								</div>
-								<div class="swiper-slide !w-3/5 rounded-lg shadow-soft-shadow bg-light-gray">
-									<img src="" alt="" class="object-cover rounded-lg">
-								</div>
-								<div class="swiper-slide !w-3/5 rounded-lg shadow-soft-shadow bg-light-gray">
-									<img src="" alt="" class="object-cover rounded-lg">
+							<?php
+								$counter++;
+							}
+							?>
+						</div>
+
+						<!-- Mobile -->
+						<div class="lg:hidden">
+							<div class="swiper !overflow-visible !h-[420px] !py-6 !px-6">
+								<div class="swiper-wrapper">
+									<?php foreach ($attachments as $attachment) :
+										$attachment_url = wp_get_attachment_url($attachment->ID);
+									?>
+										<!-- Slide -->
+										<div class="swiper-slide !w-3/5 rounded-lg shadow-soft-shadow bg-light-gray">
+											<img src="<?php echo esc_url($attachment_url); ?>"
+												alt="<?php echo esc_attr($attachment->post_title); ?>"
+												class="object-cover rounded-lg">
+										</div>
+									<?php endforeach; ?>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				<?php else : ?>
+					<p class="text-sm font-medium text-red-600">Este item não possui anexos.</p>
+				<?php endif; ?>
 
 				<div class="px-6 lg:px-0 mx-auto max-w-screen-tainacan w-full">
 					<h3 class="mb-4 font-bold text-title-gray text-2xl">Identificação</h3>
@@ -136,16 +135,16 @@
 
 						</div>
 					</div>
-					<?php if ( isset($meta['3115']) ) : ?>
-					<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
-						<div
-							id="map"
-							class="h-full"
-							data-lat="<?= $meta['3113'][0] ?>"
-							data-long="<?= $meta['3108'][0] ?>"
-							data-maps="<?= $meta['3115'][0] ?>">
+					<?php if (isset($meta['3115'])) : ?>
+						<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray">
+							<div
+								id="map"
+								class="h-full"
+								data-lat="<?= $meta['3113'][0] ?>"
+								data-long="<?= $meta['3108'][0] ?>"
+								data-maps="<?= $meta['3115'][0] ?>">
+							</div>
 						</div>
-					</div>
 					<?php endif ?>
 
 				</div>
@@ -206,30 +205,41 @@
 						</div>
 					<?php endif; ?>
 
+					<?php if (isset($meta['3051'][0]) ) : ?>
 					<div class="">
 						<h3 class="mb-4 font-bold text-title-gray text-2xl">Registro Fotográfico</h3>
 
-						<div class="">
+						<div class="grid gap-4">
 
-							<div>
-								<h4 class="font-black text-preto-50">Autoria</h4>
-								<p class="text-title-gray"><?php echo isset($meta['3051'][0]) ? $meta['3051'][0] : '-'; ?></p>
-							</div>
+							<?php if (isset($meta['3051'][0])) : ?>
+								<div>
+									<h4 class="font-black text-preto-50">Autoria</h4>
+									<p class="text-title-gray"><?php echo isset($meta['3051'][0]) ? $meta['3051'][0] : ''; ?></p>
+								</div>
+							<?php endif; ?>
 
 						</div>
 					</div>
+					<?php endif; ?>
 
-					<?php if (isset($meta['3083'][0])) : ?>
+					<?php if (isset($meta['3083'][0]) || isset($meta['3041'][0])) : ?>
 						<div class="">
 							<h3 class="mb-4 font-bold text-title-gray text-2xl">Referências</h3>
 
-							<div class="">
-
+							<div class="grid gap-4">
+								<?php if (isset($meta['3083'][0])) : ?>
 								<div>
 									<h4 class="font-black text-preto-50">Bibliográfica</h4>
-									<p class="text-title-gray"><?php echo isset($meta['3043'][0]) ? $meta['3043'][0] : '-'; ?></p>
+									<p class="text-title-gray"><?php echo isset($meta['3043'][0]) ? $meta['3043'][0] : ''; ?></p>
 								</div>
+								<?php endif; ?>
 
+								<?php if (isset($meta['3041'][0])) : ?>
+								<div>
+									<h4 class="font-black text-preto-50">Bibliográfica</h4>
+									<p class="text-title-gray"><?php echo isset($meta['3041'][0]) ? $meta['3041'][0] : ''; ?></p>
+								</div>
+								<?php endif; ?>
 							</div>
 						</div>
 					<?php endif; ?>
