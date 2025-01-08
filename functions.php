@@ -190,3 +190,53 @@ global $urlapi; $urlapi = "https://www.artepublicacapixaba.com.br";
 		   return $title;
 	
 	}
+    
+ add_action('init', 'membros_register');
+
+ function membros_register() {
+ 
+	 $labels = array(
+		 'name' => __('Colaboradores'),
+		 'singular_name' => __('Colaborador'),
+		 'add_new' => __('Inserir novo colaborador'),
+		 'add_new_item' => __('Inserir colaborador'),
+		 'edit_item' => __('Editar colaborador'),
+		 'new_item' => __('Novo colaborador'),
+		 'view_item' => __('Ver colaborador'),
+		 'search_items' => __('Buscar candidato'),
+		 'not_found' =>  __('Nenhum colaborador encontrado'),
+		 'not_found_in_trash' => __('Nada encontrado na Lixeira'),
+		 'parent_item_colon' => ''
+	 );
+ 
+	 $args = array(
+		 'has_archive' => false,
+		 'labels' => $labels,
+		 'public' => true,
+		 'show_in_rest' => true,
+		 'publicly_queryable' => true,
+		 'show_ui' => true,
+		 'query_var' => true,
+		 'menu_icon' => 'dashicons-groups',
+		 'rewrite' => true,
+		 'capability_type' => 'page',
+		 'hierarchical' => false,
+		 'menu_position' => null,
+		 'exclude_from_search' => true,
+		 'supports' => array('title', 'thumbnail', 'page-attributes')
+		 ); 
+ 
+	 register_post_type( 'membro' , $args );
+ }
+ 
+ add_filter('enter_title_here', 'my_title_place_holder' , 20 , 2 );
+ function my_title_place_holder($title , $post){
+ 
+		if( $post->post_type == 'membro' ){
+			 $my_title = "Nome do colaborador";
+			 return $my_title;
+		}
+ 
+		return $title;
+ 
+ }
