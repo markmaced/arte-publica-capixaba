@@ -138,9 +138,59 @@ require_once($functions_path). 'get-cities-by-region-with-links.php';
 global $urlapi; $urlapi = "https://www.artepublicacapixaba.com.br";
 
 /**
- * Registrando novo tipo de Post: Membros
- */
+	* Registrando novo tipo de Post: Membros
+	*/
+	
+	add_action('init', 'glossario_register');
  
+	function glossario_register() {
+	
+		$labels = array(
+			'name' => __('Glossário'),
+			'singular_name' => __('Glossário'),
+			'add_new' => __('Inserir novo termo'),
+			'add_new_item' => __('Inserir termo'),
+			'edit_item' => __('Editar termo'),
+			'new_item' => __('Novo termo'),
+			'view_item' => __('Ver termo'),
+			'search_items' => __('Buscar termo'),
+			'not_found' =>  __('Nenhum termo encontrado'),
+			'not_found_in_trash' => __('Nada encontrado na Lixeira'),
+			'parent_item_colon' => ''
+		);
+	
+		$args = array(
+			'has_archive' => false,
+			'labels' => $labels,
+			'public' => true,
+			'show_in_rest' => true,
+			'publicly_queryable' => true,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_icon' => 'dashicons-image-filter',
+			'rewrite' => true,
+			'capability_type' => 'page',
+			'hierarchical' => false,
+			'menu_position' => null,
+			'exclude_from_search' => true,
+			'supports' => array('title')
+			); 
+	
+		register_post_type( 'glossario' , $args );
+	}
+	
+	add_filter('enter_title_here', 'my_title_place_holder_glossario' , 20 , 2 );
+	function my_title_place_holder_glossario($title , $post){
+	
+		   if( $post->post_type == 'glossario' ){
+				$my_title = "Termo";
+				return $my_title;
+		   }
+	
+		   return $title;
+	
+	}
+    
  add_action('init', 'membros_register');
 
  function membros_register() {

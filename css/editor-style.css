@@ -102,6 +102,9 @@
 .top-6 {
     top: 1.5rem
 }
+.top-full {
+    top: 100%
+}
 .bottom-0 {
     bottom: 0px
 }
@@ -310,6 +313,9 @@
 .h-4 {
     height: 1rem
 }
+.h-5 {
+    height: 1.25rem
+}
 .h-56 {
     height: 14rem
 }
@@ -336,6 +342,9 @@
 }
 .h-full {
     height: 100%
+}
+.h-auto {
+    height: auto
 }
 .h-1\/3 {
     height: 33.333333%
@@ -391,6 +400,9 @@
 .min-h-screen {
     min-height: 100vh
 }
+.min-h-5 {
+    min-height: 1.25rem
+}
 .\!w-3\/5 {
     width: 60% !important
 }
@@ -412,6 +424,9 @@
 .w-4 {
     width: 1rem
 }
+.w-5 {
+    width: 1.25rem
+}
 .w-8 {
     width: 2rem
 }
@@ -420,6 +435,12 @@
 }
 .w-full {
     width: 100%
+}
+.w-auto {
+    width: auto
+}
+.w-1\/3 {
+    width: 33.333333%
 }
 .w-1\/3 {
     width: 33.333333%
@@ -531,14 +552,23 @@
 .auto-cols-auto {
     grid-auto-columns: auto
 }
+.grid-flow-row {
+    grid-auto-flow: row
+}
 .grid-flow-col {
     grid-auto-flow: column
+}
+.grid-flow-row-dense {
+    grid-auto-flow: row dense
 }
 .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr))
 }
 .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
 }
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr))
@@ -549,17 +579,26 @@
 .grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr))
 }
+.grid-rows-10 {
+    grid-template-rows: repeat(10, minmax(0, 1fr))
+}
 .flex-row {
     flex-direction: row
 }
 .flex-col {
     flex-direction: column
 }
+.flex-wrap {
+    flex-wrap: wrap
+}
 .flex-col-reverse {
     flex-direction: column-reverse
 }
 .place-content-center {
     place-content: center
+}
+.items-start {
+    align-items: flex-start
 }
 .place-items-center {
     place-items: center
@@ -572,6 +611,9 @@
 }
 .items-center {
     align-items: center
+}
+.items-baseline {
+    align-items: baseline
 }
 .justify-start {
     justify-content: flex-start
@@ -638,6 +680,11 @@
     margin-right: calc(1.5rem * var(--tw-space-x-reverse));
     margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))
 }
+.space-y-20 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(5rem * var(--tw-space-y-reverse))
+}
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -682,6 +729,9 @@
 }
 .rounded-2xl {
     border-radius: 1rem
+}
+.rounded-full {
+    border-radius: 9999px
 }
 .rounded-lg {
     border-radius: 0.5rem
@@ -741,6 +791,10 @@
 .border-neutral-300 {
     --tw-border-opacity: 1;
     border-color: rgb(212 212 212 / var(--tw-border-opacity))
+}
+.border-gray-200 {
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity))
 }
 .border-\[\#CCC\] {
     --tw-border-opacity: 1;
@@ -817,6 +871,9 @@
 }
 .p-5 {
     padding: 1.25rem
+}
+.p-2 {
+    padding: 0.5rem
 }
 .\!px-6 {
     padding-left: 1.5rem !important;
@@ -1110,6 +1167,9 @@
 .underline {
     text-decoration-line: underline
 }
+.underline-offset-2 {
+    text-underline-offset: 2px
+}
 .decoration-solid {
     text-decoration-style: solid
 }
@@ -1137,6 +1197,11 @@
 .shadow-soft-shadow {
     --tw-shadow: 0px 3px 16px 0px rgba(139, 139, 139, 0.2);
     --tw-shadow-colored: 0px 3px 16px 0px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+.shadow-lg {
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 .outline {
@@ -1270,6 +1335,13 @@ body {
     --tw-scale-y: 1.1;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
+.hover\:border-b-2:hover {
+    border-bottom-width: 2px
+}
+.hover\:border-b-logo-blue:hover {
+    --tw-border-opacity: 1;
+    border-bottom-color: rgb(55 140 202 / var(--tw-border-opacity))
+}
 .hover\:bg-logo-blue:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 140 202 / var(--tw-bg-opacity))
@@ -1277,6 +1349,10 @@ body {
 .hover\:bg-medium-gray:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(230 230 230 / var(--tw-bg-opacity))
+}
+.hover\:text-logo-blue:hover {
+    --tw-text-opacity: 1;
+    color: rgb(55 140 202 / var(--tw-text-opacity))
 }
 .hover\:text-white:hover {
     --tw-text-opacity: 1;
@@ -1305,6 +1381,9 @@ body {
     --tw-grayscale: grayscale(0);
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
 }
+.focus-visible\:bg-neutral-50\/75:focus-visible {
+    background-color: rgb(250 250 250 / 0.75)
+}
 .focus-visible\:bg-neutral-900:focus-visible {
     --tw-bg-opacity: 1;
     background-color: rgb(23 23 23 / var(--tw-bg-opacity))
@@ -1312,6 +1391,9 @@ body {
 .focus-visible\:text-neutral-900:focus-visible {
     --tw-text-opacity: 1;
     color: rgb(23 23 23 / var(--tw-text-opacity))
+}
+.focus-visible\:underline:focus-visible {
+    text-decoration-line: underline
 }
 .focus-visible\:outline-none:focus-visible {
     outline: 2px solid transparent;
@@ -1364,6 +1446,10 @@ body {
     }
     .sm\:gap-8 {
         gap: 2rem
+    }
+    .sm\:text-base {
+        font-size: 1rem;
+        line-height: 1.5rem
     }
 }
 @media (min-width: 782px) {
@@ -1494,6 +1580,9 @@ body {
     .lg\:h-44 {
         height: 11rem
     }
+    .lg\:h-6 {
+        height: 1.5rem
+    }
     .lg\:h-64 {
         height: 16rem
     }
@@ -1517,6 +1606,9 @@ body {
     }
     .lg\:w-4\/12 {
         width: 33.333333%
+    }
+    .lg\:w-6 {
+        width: 1.5rem
     }
     .lg\:w-8\/12 {
         width: 66.666667%
@@ -1692,6 +1784,10 @@ body {
     .lg\:text-lg {
         font-size: 1.125rem;
         line-height: 1.75rem
+    }
+    .lg\:text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem
     }
     .lg\:text-\[40px\] {
         font-size: 40px
