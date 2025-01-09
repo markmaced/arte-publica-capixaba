@@ -6,87 +6,6 @@
             <?php custom_breadcrumbs(); ?>
         </div>
 
-        <div x-data="{ selectedTab: 'A' }" class="hidden w-full space-y-20">
-            <div
-                @keydown.right.prevent="$focus.wrap().next()"
-                @keydown.left.prevent="$focus.wrap().previous()"
-                class="flex gap-2 flex-wrap py-2"
-                role="tablist"
-                aria-label="Glossary Alphabet">
-
-                <template x-for="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')">
-                    <button
-                        @click="selectedTab = letter"
-                        :aria-selected="selectedTab === letter"
-                        :tabindex="selectedTab === letter ? '0' : '-1'"
-                        :class="selectedTab === letter ? 'font-bold text-white bg-logo-blue rounded-full' : 'text-title-gray font-bold hover:border-b-2 hover:border-b-logo-blue hover:text-logo-blue'"
-                        class="w-5 h-5 lg:h-6 lg:w-6 text-xs lg:flex items-center justify-center lg:text-sm"
-                        type="button"
-                        role="tab"
-                        :aria-controls="'tabpanel' + letter">
-                        <span x-text="letter"></span>
-                    </button>
-                </template>
-            </div>
-
-            <div class="px-2 py-4 text-title-gray">
-                <template x-for="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')">
-                    <div
-                        x-show="selectedTab === letter"
-                        :id="'tabpanel' + letter"
-                        role="tabpanel"
-                        :aria-label="'Glossary Section for ' + letter">
-                        <div x-data="{ isExpanded: false }" class="overflow-hidden flex flex-col">
-                            <span x-text="letter" class="text-5xl text-logo-blue font-black mb-10"></span>
-                            <div class="grid grid-cols-3 grid-flow-row">
-                                <button id="controlsAccordionItemOne" type="button" class="gap-2 text-left underline-offset-2 hover:text-logo-blue hover:text-underline focus-visible:bg-neutral-50/75 focus-visible:underline focus-visible:outline-none" aria-controls="accordionItemOne" @click="isExpanded = ! isExpanded" :class="isExpanded ? 'text-onSurfaceStrong font-bold text-logo-blue'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" :aria-expanded="isExpanded ? 'true' : 'false'">
-                                    Abacate
-                                </button>
-                                <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
-                                    <div class="text-sm sm:text-base">
-                                        Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our for additional information.
-                                    </div>
-                                </div>
-                                <button id="controlsAccordionItemOne" type="button" class="gap-2 text-left underline-offset-2 hover:text-logo-blue hover:text-underline focus-visible:bg-neutral-50/75 focus-visible:underline focus-visible:outline-none" aria-controls="accordionItemOne" @click="isExpanded = ! isExpanded" :class="isExpanded ? 'text-onSurfaceStrong font-bold text-logo-blue'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" :aria-expanded="isExpanded ? 'true' : 'false'">
-                                    Abacate
-                                </button>
-                                <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
-                                    <div class="text-sm sm:text-base">
-                                        Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our for additional information.
-                                    </div>
-                                </div>
-                                <button id="controlsAccordionItemOne" type="button" class="gap-2 text-left underline-offset-2 hover:text-logo-blue hover:text-underline focus-visible:bg-neutral-50/75 focus-visible:underline focus-visible:outline-none" aria-controls="accordionItemOne" @click="isExpanded = ! isExpanded" :class="isExpanded ? 'text-onSurfaceStrong font-bold text-logo-blue'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" :aria-expanded="isExpanded ? 'true' : 'false'">
-                                    Abacate
-                                </button>
-                                <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
-                                    <div class="text-sm sm:text-base">
-                                        Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our for additional information.
-                                    </div>
-                                </div>
-                                <button id="controlsAccordionItemOne" type="button" class="gap-2 text-left underline-offset-2 hover:text-logo-blue hover:text-underline focus-visible:bg-neutral-50/75 focus-visible:underline focus-visible:outline-none" aria-controls="accordionItemOne" @click="isExpanded = ! isExpanded" :class="isExpanded ? 'text-onSurfaceStrong font-bold text-logo-blue'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" :aria-expanded="isExpanded ? 'true' : 'false'">
-                                    Abacate
-                                </button>
-                                <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
-                                    <div class="text-sm sm:text-base">
-                                        Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our for additional information.
-                                    </div>
-                                </div>
-                                <button id="controlsAccordionItemOne" type="button" class="gap-2 text-left underline-offset-2 hover:text-logo-blue hover:text-underline focus-visible:bg-neutral-50/75 focus-visible:underline focus-visible:outline-none" aria-controls="accordionItemOne" @click="isExpanded = ! isExpanded" :class="isExpanded ? 'text-onSurfaceStrong font-bold text-logo-blue'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" :aria-expanded="isExpanded ? 'true' : 'false'">
-                                    Abacate
-                                </button>
-                                <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
-                                    <div class="text-sm sm:text-base">
-                                        Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our for additional information.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <b><a href="#" class="underline" x-text="'Section for ' + letter"></a></b> -->
-                    </div>
-                </template>
-            </div>
-        </div>
-
         <?php
         $args = array(
             'post_type' => 'glossario',
@@ -96,55 +15,54 @@
             'order' => 'ASC'
         );
         $loop = new WP_Query($args);
+
+        // Organizar posts por letra inicial
+        $posts_by_letter = array_fill_keys(range('A', 'Z'), []);
+
+        if ($loop->have_posts()) {
+            while ($loop->have_posts()) {
+                $loop->the_post();
+                $first_letter = strtoupper(mb_substr(get_the_title(), 0, 1));
+                if (array_key_exists($first_letter, $posts_by_letter)) {
+                    $posts_by_letter[$first_letter][] = array(
+                        'title' => get_the_title(),
+                        'definition' => get_field('definicao')
+                    );
+                }
+            }
+        }
+        wp_reset_postdata();
         ?>
 
-        <div x-data="{ selectedTab: 'A' }" class="w-full space-y-20">
-            <div
-                @keydown.right.prevent="$focus.wrap().next()"
-                @keydown.left.prevent="$focus.wrap().previous()"
-                class="flex gap-2 flex-wrap py-2"
-                role="tablist"
-                aria-label="Glossary Alphabet">
-
-                <template x-for="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')">
+        <div class="w-full space-y-20">
+            <!-- Tabs -->
+            <div class="flex gap-2 flex-wrap py-2" role="tablist" aria-label="Glossary Alphabet">
+                <?php foreach (range('A', 'Z') as $letter): ?>
                     <button
-                        @click="selectedTab = letter"
-                        :aria-selected="selectedTab === letter"
-                        :tabindex="selectedTab === letter ? '0' : '-1'"
-                        :class="selectedTab === letter ? 'font-bold text-white bg-logo-blue rounded-full' : 'text-title-gray font-bold hover:border-b-2 hover:border-b-logo-blue hover:text-logo-blue'"
-                        class="w-5 h-5 lg:h-6 lg:w-6 text-xs lg:flex items-center justify-center lg:text-sm"
+                        data-tab="<?php echo $letter; ?>"
+                        class="tab-button text-title-gray font-bold hover:border-b-2 hover:border-b-logo-blue hover:text-logo-blue w-5 h-5 lg:h-6 lg:w-6 text-xs lg:flex items-center justify-center lg:text-sm"
                         type="button"
                         role="tab"
-                        :aria-controls="'tabpanel' + letter">
-                        <span x-text="letter"></span>
+                        aria-controls="tabpanel-<?php echo $letter; ?>">
+                        <?php echo $letter; ?>
                     </button>
-                </template>
+                <?php endforeach; ?>
             </div>
 
+            <!-- Panels -->
             <div class="px-2 py-4 text-title-gray">
-                <template x-for="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')">
+                <?php foreach (range('A', 'Z') as $letter): ?>
                     <div
-                        x-show="selectedTab === letter"
-                        :id="'tabpanel' + letter"
+                        id="tabpanel-<?php echo $letter; ?>"
+                        class="tab-panel hidden"
                         role="tabpanel"
-                        :aria-label="'Glossary Section for ' + letter">
+                        aria-labelledby="tab-<?php echo $letter; ?>">
                         <div class="overflow-hidden flex flex-col">
-                            <span x-text="letter" class="text-5xl text-logo-blue font-black mb-10"></span>
+                            <span class="text-5xl text-logo-blue font-black mb-10"><?php echo $letter; ?></span>
                             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                                <?php
-                                $current_letter = '';
-                                if ($loop->have_posts()) :
-                                    while ($loop->have_posts()) : $loop->the_post();
-                                        $title = get_the_title();
-                                        $definition = get_field('definicao');
-                                        $first_letter = strtoupper(substr($title, 0, 1));
-
-                                        // Agrupa por letra
-                                        if ($current_letter !== $first_letter) {
-                                            $current_letter = $first_letter;
-                                        }
-                                ?>
-                                        <template x-if="letter === '<?php echo $first_letter; ?>'" x-data="{ isExpanded: false }">
+                                <?php if (!empty($posts_by_letter[$letter])): ?>
+                                    <?php foreach ($posts_by_letter[$letter] as $post): ?>
+                                        <div x-data="{ isExpanded: false }">
                                             <div :class="isExpanded ? 'h-auto' : 'h-5'">
                                                 <button
                                                     type="button"
@@ -152,27 +70,66 @@
                                                     @click="isExpanded = ! isExpanded"
                                                     :class="isExpanded ? 'text-onSurfaceStrong font-bold text-logo-blue'  : 'text-onSurface dark:text-onSurfaceDark font-medium'"
                                                     :aria-expanded="isExpanded ? 'true' : 'false'">
-                                                    <?php echo esc_html($title); ?>
+                                                    <?php echo esc_html($post['title']); ?>
                                                 </button>
-                                                <div x-cloak x-show="isExpanded" role="region" x-collapse>
+                                                <div x-cloak x-show="isExpanded" role="region" x-collapse x-transition>
                                                     <div class="text-sm sm:text-base">
-                                                        <?php echo esc_html($definition); ?>
+                                                        <?php echo esc_html($post['definition']); ?>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </template>
-                                <?php
-                                    endwhile;
-                                    wp_reset_postdata();
-                                endif;
-                                ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <p>Nenhum resultado</p>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
-                </template>
+                <?php endforeach; ?>
             </div>
         </div>
 
 
     </div>
 </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function showTab(letter) {
+            // Ocultar todos os painéis
+            document.querySelectorAll('.tab-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+
+            // Desativar todos os botões
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
+            });
+
+            // Mostrar o painel correspondente
+            const panel = document.getElementById('tabpanel-' + letter);
+            if (panel) {
+                panel.classList.remove('hidden');
+            }
+
+            // Ativar o botão correspondente
+            const button = [...document.querySelectorAll('.tab-button')].find(btn => btn.dataset.tab === letter);
+            if (button) {
+                button.classList.add('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
+            }
+        }
+
+        // Inicializar com a aba "A"
+        showTab('A');
+
+        // Adicionar eventos de clique aos botões
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const letter = button.dataset.tab;
+                showTab(letter);
+            });
+        });
+    });
+</script>

@@ -20,14 +20,14 @@
             </div>
         </div>
         <div class="hidden lg:block col-span-2 relative h-full w-full">
-            <div class="absolute top-0 left-1/4 bg-[#e6e6e6] rounded-2xl w-3/5 h-2/3">
-                <div class=""></div>
+            <div class="absolute overflow-hidden top-0 left-1/4 shadow-soft-shadow rounded-2xl w-3/5 h-2/3">
+                <img class="object-cover object-center h-full w-full" src="<?php echo get_template_directory_uri() . '/resources/images/o-projeto-3.png' ?>" />
             </div>
-            <div class="absolute top-1/3 left-0 bg-[#CCC] rounded-2xl w-[43%] h-[43%] z-10">
-                <div class=""></div>
+            <div class="absolute overflow-hidden top-1/3 left-0 shadow-soft-shadow rounded-2xl w-[43%] h-[43%] z-10">
+                <img class="object-cover object-top h-full w-full" src="<?php echo get_template_directory_uri() . '/resources/images/o-projeto-2.png' ?>" />
             </div>
-            <div class="absolute bottom-0 right-0 bg-[#CCC] rounded-2xl w-[43%] h-[43%] z-10">
-                <div class=""></div>
+            <div class="absolute overflow-hidden bottom-0 right-0 shadow-soft-shadow rounded-2xl w-[43%] h-[43%] z-10">
+                <img class="object-cover object-center h-full w-full" src="<?php echo get_template_directory_uri() . '/resources/images/o-projeto-1.png' ?>" />
             </div>
         </div>
     </div>

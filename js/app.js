@@ -7,12 +7,56 @@
   \*****************************/
 /***/ (() => {
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 window.addEventListener('load', function () {
   var swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     slidesPerView: 'auto',
     allowTouchMove: true,
     spaceBetween: 20
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  function showTab(letter) {
+    // Ocultar todos os painéis
+    document.querySelectorAll('.tab-panel').forEach(function (panel) {
+      panel.classList.add('hidden');
+    });
+
+    // Desativar todos os botões
+    document.querySelectorAll('.tab-button').forEach(function (button) {
+      button.classList.remove('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
+    });
+
+    // Mostrar o painel correspondente
+    var panel = document.getElementById('tabpanel-' + letter);
+    if (panel) {
+      panel.classList.remove('hidden');
+    }
+
+    // Ativar o botão correspondente
+    var button = _toConsumableArray(document.querySelectorAll('.tab-button')).find(function (btn) {
+      return btn.dataset.tab === letter;
+    });
+    if (button) {
+      button.classList.add('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
+    }
+  }
+
+  // Inicializar com a aba "A"
+  showTab('A');
+
+  // Adicionar eventos de clique aos botões
+  document.querySelectorAll('.tab-button').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var letter = button.dataset.tab;
+      showTab(letter);
+    });
   });
 });
 
@@ -65,16 +109,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // leaflet
 document.addEventListener("DOMContentLoaded", function () {
   var mapElement = document.getElementById('map');
-  var lat = parseFloat(mapElement.dataset.lat) || -20.3155; // Latitude padrão
-  var _long = parseFloat(mapElement.dataset["long"]) || -40.3128; // Longitude padrão
-  var mapsLink = mapElement.dataset.maps; // Link do Google Maps
+  if (mapElement) {
+    var lat = parseFloat(mapElement.dataset.lat) || -20.3155; // Latitude padrão
+    var _long = parseFloat(mapElement.dataset["long"]) || -40.3128; // Longitude padrão
+    var mapsLink = mapElement.dataset.maps; // Link do Google Maps
 
-  var map = L.map('map').setView([lat, _long], 11);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: "&copy; <a href=\"".concat(mapsLink, "\" target=\"_blank\">Abrir no Google Maps</a>")
-  }).addTo(map);
-  var marker = L.marker([lat, _long]).addTo(map);
+    var map = L.map('map').setView([lat, _long], 11);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: "&copy; <a href=\"".concat(mapsLink, "\" target=\"_blank\">Abrir no Google Maps</a>")
+    }).addTo(map);
+    var marker = L.marker([lat, _long]).addTo(map);
+  }
 });
 jQuery(document).ready(function ($) {
   function filterLibrary(filters) {
