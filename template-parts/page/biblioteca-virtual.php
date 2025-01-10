@@ -57,7 +57,7 @@
                     <label class="w-full">
                         Selecione o tipo de ficha
                         <select name="tipoDeFicha" id="tipoDeFicha"
-                            class="block lg:w-full p-4 text-preto-50 placeholder:text-preto-50 rounded-lg bg-light-gray shadow-common-shadow mt-2">
+                            class="block w-full p-4 text-preto-50 placeholder:text-preto-50 rounded-lg bg-light-gray shadow-common-shadow mt-2">
                             <option value="">Todos</option>
                             <option value="livro">Livro</option>
                             <option value="capitulo_livro">Capítulo de Livro</option>

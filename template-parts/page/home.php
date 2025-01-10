@@ -17,7 +17,7 @@
                     <div class="h-28 col-span-2 <?php echo $col_span . ' ' . $hidden . ' ' . $height ?>">
                         <a href="<?php echo $item['url'] ?>">
                             <img src="<?php echo $item['image_url'] ?>"
-                                class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110">
+                                class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110 rounded-2xl">
                         </a>
                     </div>
                     <?php $i++; ?>

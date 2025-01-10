@@ -52,7 +52,7 @@ $random_items = get_random_items_with_images();
 </div>
 
 <section class="py-20 max-w-screen-tainacan mx-auto px-8 lg:px-0">
-    <form class="max-w-xl mx-auto mb-16">
+    <form class="hidden max-w-xl mx-auto mb-16">
         <div class="flex flex-col lg:flex-row items-center">
             <label class="lg:mr-6 mb-12 lg:mb-0 text-2xl font-medium text-subtitle-gray">Pesquisar</label>
             <div class="flex flex-1 space-x-6 lg:m-0">
