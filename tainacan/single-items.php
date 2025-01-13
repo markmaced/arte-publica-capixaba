@@ -56,9 +56,33 @@
 								$grid_class = ($counter === 1) ? 'row-span-2 col-span-2' : '';
 							?>
 								<div class="overflow-hidden rounded-lg shadow-soft-shadow bg-light-gray <?php echo $grid_class; ?>">
-									<img src="<?php echo esc_url($attachment_url); ?>"
-										alt="<?php echo esc_attr($attachment->post_title); ?>"
-										class="w-full <?php echo ($counter === 1) ? 'h-full min-h-[200px]' : 'h-[200px]'; ?> object-cover rounded-lg bg-light-gray">
+
+									<div x-data="{modalIsOpen: false}">
+										<img src="<?php echo esc_url($attachment_url); ?>"
+											alt="<?php echo esc_attr($attachment->post_title); ?>"
+											class="w-full <?php echo ($counter === 1) ? 'h-full min-h-[200px]' : 'h-[200px]'; ?> object-cover rounded-lg bg-light-gray"
+											@click="modalIsOpen = true"
+											>
+										<div x-cloak x-show="modalIsOpen" x-transition.opacity.duration.200ms x-trap.inert.noscroll="modalIsOpen" @keydown.esc.window="modalIsOpen = false" @click.self="modalIsOpen = false" class="fixed inset-0 z-[500] flex items-end justify-center bg-black/20 p-4 pb-8 backdrop-blur-md sm:items-center lg:p-8" role="dialog" aria-modal="true" aria-labelledby="defaultModalTitle">
+											<!-- Modal Dialog -->
+											<div x-show="modalIsOpen" x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" x-transition:enter-start="opacity-0 scale-50" x-transition:enter-end="opacity-100 scale-100" class="flex overflow-hidden rounded-md border border-neutral-300 bg-white text-subtitle-gray h-[90vh]">
+												<!-- Dialog Header -->
+												<!-- <div class="flex items-center justify-between border-b border-neutral-300 p-4">
+													<button @click="modalIsOpen = false" aria-label="close modal">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
+															<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+														</svg>
+													</button>
+												</div> -->
+												<!-- Dialog Body -->
+												<div class="p-4 flex flex-1 h-full">
+													<img src="<?php echo esc_url($attachment_url); ?>"
+														alt="<?php echo esc_attr($attachment->post_title); ?>"
+														class="object-cover rounded-lg bg-light-gray">
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							<?php
 								$counter++;
@@ -84,6 +108,8 @@
 							</div>
 						</div>
 					</div>
+
+
 				<?php else : ?>
 					<p class="text-sm font-medium text-red-600">Este item não possui anexos.</p>
 				<?php endif; ?>
@@ -205,21 +231,21 @@
 						</div>
 					<?php endif; ?>
 
-					<?php if (isset($meta['3051'][0]) ) : ?>
-					<div class="">
-						<h3 class="mb-4 font-bold text-title-gray text-2xl">Registro Fotográfico</h3>
+					<?php if (isset($meta['3051'][0])) : ?>
+						<div class="">
+							<h3 class="mb-4 font-bold text-title-gray text-2xl">Registro Fotográfico</h3>
 
-						<div class="grid gap-4">
+							<div class="grid gap-4">
 
-							<?php if (isset($meta['3051'][0])) : ?>
-								<div>
-									<h4 class="font-black text-preto-50">Autoria</h4>
-									<p class="text-title-gray"><?php echo isset($meta['3051'][0]) ? $meta['3051'][0] : ''; ?></p>
-								</div>
-							<?php endif; ?>
+								<?php if (isset($meta['3051'][0])) : ?>
+									<div>
+										<h4 class="font-black text-preto-50">Autoria</h4>
+										<p class="text-title-gray"><?php echo isset($meta['3051'][0]) ? $meta['3051'][0] : ''; ?></p>
+									</div>
+								<?php endif; ?>
 
+							</div>
 						</div>
-					</div>
 					<?php endif; ?>
 
 					<?php if (isset($meta['3083'][0]) || isset($meta['3041'][0])) : ?>
@@ -228,17 +254,17 @@
 
 							<div class="grid gap-4">
 								<?php if (isset($meta['3083'][0])) : ?>
-								<div>
-									<h4 class="font-black text-preto-50">Bibliográfica</h4>
-									<p class="text-title-gray"><?php echo isset($meta['3043'][0]) ? $meta['3043'][0] : ''; ?></p>
-								</div>
+									<div>
+										<h4 class="font-black text-preto-50">Bibliográfica</h4>
+										<p class="text-title-gray"><?php echo isset($meta['3043'][0]) ? $meta['3043'][0] : ''; ?></p>
+									</div>
 								<?php endif; ?>
 
 								<?php if (isset($meta['3041'][0])) : ?>
-								<div>
-									<h4 class="font-black text-preto-50">Bibliográfica</h4>
-									<p class="text-title-gray"><?php echo isset($meta['3041'][0]) ? $meta['3041'][0] : ''; ?></p>
-								</div>
+									<div>
+										<h4 class="font-black text-preto-50">Bibliográfica</h4>
+										<p class="text-title-gray"><?php echo isset($meta['3041'][0]) ? $meta['3041'][0] : ''; ?></p>
+									</div>
 								<?php endif; ?>
 							</div>
 						</div>

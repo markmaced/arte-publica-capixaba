@@ -45,11 +45,9 @@ article > *:not(.entry-content),
     outline: #378CCA auto 1px !important;
 }
 
-@media screen and (max-width: 969px) {
+html {
+    scroll-behavior: smooth;
 }
-
-
-
 
 input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
     border: 1px solid #CCCCCC;
