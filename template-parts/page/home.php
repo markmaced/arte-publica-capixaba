@@ -103,10 +103,10 @@
                         <?php $col_span = ($i == 7 || $i == 9) ? 'lg:col-span-3' : ''; ?>
                         <?php $height = ($i == 7 || $i == 9) ? 'lg:h-64' : 'lg:h-44'; ?>
                         <?php $hidden = $i == 8 ? 'lg:hidden' : ''; ?>
-                        <div class="h-28 col-span-2 <?php echo $col_span . ' ' . $hidden . ' ' . $height ?>">
+                        <div class="h-28 col-span-2 rounded-2xl <?php echo $col_span . ' ' . $hidden . ' ' . $height ?>">
                             <a href="<?php echo $item['url'] ?>">
                                 <img src="<?php echo $item['image_url'] ?>"
-                                    class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110">
+                                    class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110 rounded-2xl">
                             </a>
                         </div>
                         <?php $i++; ?>
@@ -243,7 +243,7 @@
     </div>
 </section>
 
-<section class="w-full py-20 font-lato bg-light-gray lg:bg-white">
+<section class="w-full py-20 font-lato bg-light-gray lg:bg-white" id="contato">
     <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
         <h2 class="text-title-gray text-4xl font-black mb-8 lg:mb-10">Contato</h2>
         <div class="hidden w-full flex-col lg:flex-row justify-between">

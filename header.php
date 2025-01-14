@@ -52,6 +52,8 @@
 						</ul>
 					</div>
 				</nav>
+
+				<!-- <a href="javascript:" id="return-to-top" style="<?php echo (get_theme_mod( 'tainacan_footer_color', 'dark' ) == 'colored' ? 'background-color: #2c2d2d;' : '') ?>"><i class="tainacan-icon tainacan-icon-arrowup"></i></a> -->
 		</header>
 
 		<div id="content" class="site-content flex-grow">
