@@ -138,7 +138,7 @@
     <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
         <h2 class="text-title-gray text-4xl font-black mb-6 lg:mb-10" data-aos="fade-up">Mapa do site</h2>
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8" data-aos="fade-up">
-            <a href="#"
+            <a href="<?php echo home_url('/o-projeto'); ?>"
                 class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow rounded-2xl border border-medium-gray group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">O projeto</h5>
@@ -152,7 +152,7 @@
                 <p class="text-subtitle-gray group-hover:text-white">Conheça a história do projeto, seus idealizadores e
                     membros.</p>
             </a>
-            <a href="/acervo"
+            <a href="<?php echo home_url('/acervo'); ?>"
                 class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Acervo</h5>
@@ -166,7 +166,7 @@
                 <p class="text-subtitle-gray group-hover:text-white">Acesse as coleções e obras capixabas levantadas
                     pelo projeto.</p>
             </a>
-            <a href="/biblioteca-virtual"
+            <a href="<?php echo home_url('/biblioteca-virtual'); ?>"
                 class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Biblioteca Virtual
@@ -210,7 +210,7 @@
                 <p class="text-subtitle-gray group-hover:text-white">Materiais preparados para professores do Ensino
                     Básico, para auxílio em sala de aula. (Em breve)</p>
             </a>
-            <a href="#"
+            <a href="<?php echo home_url('/glossario'); ?>"
                 class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Glossário</h5>
