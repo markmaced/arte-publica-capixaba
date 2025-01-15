@@ -40,7 +40,7 @@
                 <?php foreach (range('A', 'Z') as $letter): ?>
                     <button
                         data-tab="<?php echo $letter; ?>"
-                        class="tab-button text-title-gray font-bold hover:border-b-2 hover:border-b-logo-blue hover:text-logo-blue w-5 h-5 lg:h-6 lg:w-6 text-xs lg:flex items-center justify-center lg:text-sm"
+                        class="tab-button text-title-gray font-bold hover:border-b-2 hover:border-b-logo-blue hover:text-logo-blue w-6 h-6 text-base lg:flex items-center justify-center lg:text-sm"
                         type="button"
                         role="tab"
                         aria-controls="tabpanel-<?php echo $letter; ?>">
@@ -63,17 +63,17 @@
                                 <?php if (!empty($posts_by_letter[$letter])): ?>
                                     <?php foreach ($posts_by_letter[$letter] as $post): ?>
                                         <div x-data="{ isExpanded: false }">
-                                            <div :class="isExpanded ? 'h-auto' : 'h-5'">
+                                            <div :class="isExpanded ? 'h-auto' : 'h-6'">
                                                 <button
                                                     type="button"
-                                                    class="gap-2 text-left underline-offset-2 hover:text-logo-blue hover:text-underline focus-visible:bg-neutral-50/75 focus-visible:underline focus-visible:outline-none mb-1"
+                                                    class="gap-2 text-left underline-offset-2 hover:text-logo-blue hover:text-underline focus-visible:bg-neutral-50/75 focus-visible:underline focus-visible:outline-none mb-1 text-lg"
                                                     @click="isExpanded = ! isExpanded"
                                                     :class="isExpanded ? 'text-onSurfaceStrong font-bold text-logo-blue'  : 'text-onSurface dark:text-onSurfaceDark font-medium'"
                                                     :aria-expanded="isExpanded ? 'true' : 'false'">
                                                     <?php echo esc_html($post['title']); ?>
                                                 </button>
                                                 <div x-cloak x-show="isExpanded" role="region" x-collapse x-transition>
-                                                    <div class="text-sm sm:text-base">
+                                                    <div class="text-base pb-10">
                                                         <?php echo esc_html($post['definition']); ?>
                                                     </div>
                                                 </div>

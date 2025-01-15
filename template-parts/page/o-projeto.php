@@ -156,7 +156,7 @@
 
             while ($loop->have_posts()) : $loop->the_post(); ?>
                 <div class="rounded-2xl shadow-soft-shadow bg-white p-4">
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="" class="w-full h-52 bg-[#CCC] rounded-2xl mb-4">
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="" class="w-full h-52 bg-[#CCC] rounded-2xl mb-4 object-cover">
                     <div class="mb-4">
                         <p class="text-title-gray font-bold"><?php echo the_title(); ?></p>
                         <?php if (!empty(get_field("lattes"))) {
