@@ -60,7 +60,7 @@
 									<div x-data="{modalIsOpen: false}">
 										<img src="<?php echo esc_url($attachment_url); ?>"
 											alt="<?php echo esc_attr($attachment->post_title); ?>"
-											class="w-full <?php echo ($counter === 1) ? 'h-full min-h-[200px]' : 'h-[200px]'; ?> object-cover rounded-lg bg-light-gray"
+											class="w-full cursor-pointer <?php echo ($counter === 1) ? 'min-h-[200px] h-custom' : 'h-[200px]'; ?> object-cover rounded-lg bg-light-gray"
 											@click="modalIsOpen = true"
 											>
 										<div x-cloak x-show="modalIsOpen" x-transition.opacity.duration.200ms x-trap.inert.noscroll="modalIsOpen" @keydown.esc.window="modalIsOpen = false" @click.self="modalIsOpen = false" class="fixed inset-0 z-[500] flex items-end justify-center bg-black/20 p-4 pb-8 backdrop-blur-md sm:items-center lg:p-8" role="dialog" aria-modal="true" aria-labelledby="defaultModalTitle">

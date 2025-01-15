@@ -40,7 +40,9 @@ module.exports = {
                 'soft-shadow': '0px 3px 16px 0px rgba(139, 139, 139, 0.2)',
                 'common-shadow': '0px 4px 8px 0px #00000033',
             },
-            
+            height: {
+                'custom': '26.25rem'
+            }
         },
         screens: {
             'xs': '480px',
