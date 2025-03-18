@@ -26,6 +26,7 @@ module.exports = {
                 'medium-gray': '#E6E6E6',
                 'light-gray': '#F0F0F0',
                 'logo-blue': '#378CCA',
+                'apc-pink': '#F280E6',
                 'title-gray': '#272727',
                 'subtitle-gray': '#4D4D4D',
                 'grafitti': '#666666',

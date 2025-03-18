@@ -19,7 +19,7 @@
 				<div class="px-6 lg:px-0 mx-auto max-w-screen-tainacan w-full">
 					<h2 class="text-4xl font-black text-title-gray mb-4"><?php the_title(); ?></h2>
 
-					<p class="lg:overflow-x-auto lg:whitespace-nowrap">
+					<!-- <p class="lg:overflow-x-auto lg:whitespace-nowrap">
 						<a href="<?php echo home_url('/acervo') ?>" class="text-preto-60 hover:underline">
 							Acervo
 						</a>
@@ -41,7 +41,9 @@
 						</a>
 
 
-					</p>
+					</p> -->
+
+					<?php custom_breadcrumbs(); ?>
 				</div>
 
 				<?php if (!empty($attachments)) : ?>
@@ -101,7 +103,7 @@
 										<div class="swiper-slide !w-3/5 rounded-lg shadow-soft-shadow bg-light-gray">
 											<img src="<?php echo esc_url($attachment_url); ?>"
 												alt="<?php echo esc_attr($attachment->post_title); ?>"
-												class="object-cover rounded-lg">
+												class="object-cover rounded-lg w-full h-full">
 										</div>
 									<?php endforeach; ?>
 								</div>
@@ -121,17 +123,17 @@
 
 						<div>
 							<h4 class="font-black text-preto-50">Título</h4>
-							<p class="text-title-gray"><?php echo isset($meta['3151'][0]) ? $meta['3151'][0] : '-'; ?></p>
+							<p class="text-title-gray"><?php echo isset($meta['3151'][0]) ? $meta['3151'][0] : 'Em atualização'; ?></p>
 						</div>
 
 						<div>
 							<h4 class="font-black text-preto-50">Categoria</h4>
-							<p class="text-title-gray"><?php echo isset($meta['3147'][0]) ? $meta['3147'][0] : '-'; ?></p>
+							<p class="text-title-gray"><?php echo isset($meta['3147'][0]) ? $meta['3147'][0] : 'Em atualização'; ?></p>
 						</div>
 
 						<div>
 							<h4 class="font-black text-preto-50">Temporalidade da Obra</h4>
-							<p class="text-title-gray"><?php echo isset($meta['3139'][0]) ? $meta['3139'][0] : '-'; ?></p>
+							<p class="text-title-gray"><?php echo isset($meta['3139'][0]) ? $meta['3139'][0] : 'Em atualização'; ?></p>
 						</div>
 
 
@@ -146,17 +148,17 @@
 
 							<div>
 								<h4 class="font-black text-preto-50">Município</h4>
-								<p class="text-title-gray"><?php echo isset($meta['3121'][0]) ? $meta['3121'][0] : '-'; ?></p>
+								<p class="text-title-gray"><?php echo isset($meta['3121'][0]) ? $meta['3121'][0] : 'Em atualização'; ?></p>
 							</div>
 
 							<div>
 								<h4 class="font-black text-preto-50">Bairro</h4>
-								<p class="text-title-gray"><?php echo isset($meta['3123'][0]) ? $meta['3123'][0] : '-'; ?></p>
+								<p class="text-title-gray"><?php echo isset($meta['3123'][0]) ? $meta['3123'][0] : 'Em atualização'; ?></p>
 							</div>
 
 							<div>
 								<h4 class="font-black text-preto-50">Rua</h4>
-								<p class="text-title-gray"><?php echo isset($meta['3125'][0]) ? $meta['3125'][0] : '-'; ?></p>
+								<p class="text-title-gray"><?php echo isset($meta['3125'][0]) ? $meta['3125'][0] : 'Em atualização'; ?></p>
 							</div>
 
 						</div>
@@ -182,12 +184,12 @@
 
 						<div>
 							<h4 class="font-black text-preto-50">Material</h4>
-							<p class="text-title-gray"><?php echo isset($meta['3106'][0]) ? $meta['3106'][0] : '-'; ?></p>
+							<p class="text-title-gray"><?php echo isset($meta['3106'][0]) ? $meta['3106'][0] : 'Em atualização'; ?></p>
 						</div>
 
 						<div>
 							<h4 class="font-black text-preto-50">Placa/Inscrições</h4>
-							<p class="text-title-gray"><?php echo isset($meta['3093'][0]) ? $meta['3093'][0] : '-'; ?></p>
+							<p class="text-title-gray"><?php echo isset($meta['3093'][0]) ? $meta['3093'][0] : 'Em atualização'; ?></p>
 						</div>
 
 						<div>
@@ -195,7 +197,7 @@
 							<!-- <p class="text-title-gray"><?php echo tainacan_get_the_metadata(array(
 																'metadata' => 3091
 															), get_the_ID()); ?></p> -->
-							<p class="text-title-gray"><?php echo isset($meta['3091'][0]) ? $meta['3091'][0] : '-'; ?></p>
+							<p class="text-title-gray"><?php echo isset($meta['3091'][0]) ? $meta['3091'][0] : 'Em atualização'; ?></p>
 						</div>
 
 					</div>
@@ -208,7 +210,7 @@
 
 						<div>
 							<h4 class="font-black text-preto-50">Dados Históricos</h4>
-							<p class="text-title-gray"><?php echo isset($meta['3085'][0]) ? $meta['3085'][0] : '-'; ?></p>
+							<p class="text-title-gray"><?php echo isset($meta['3085'][0]) ? $meta['3085'][0] : 'Em atualização'; ?></p>
 						</div>
 
 					</div>
@@ -224,7 +226,7 @@
 
 								<div>
 									<h4 class="font-black text-preto-50">Propriedade</h4>
-									<p class="text-title-gray"><?php echo isset($meta['3083'][0]) ? $meta['3083'][0] : '-'; ?></p>
+									<p class="text-title-gray"><?php echo isset($meta['3083'][0]) ? $meta['3083'][0] : 'Em atualização'; ?></p>
 								</div>
 
 							</div>

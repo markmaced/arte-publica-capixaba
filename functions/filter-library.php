@@ -37,8 +37,8 @@ function filter_library() {
                 <img class="object-cover w-full rounded-tl-lg h-32 max-w-36 rounded-bl-lg"
                      src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
                 <div class="flex flex-col justify-between py-7 px-4 lg:p-7 leading-normal font-lato">
-                    <h5 class="mb-2 font-bold leading-tight text-title-gray line-clamp-2"><?php the_title(); ?></h5>
-                    <p class="text-sm leading-tight text-title-gray line-clamp-1"><?php echo $groupData['autores'] ?></p>
+                    <h5 class="mb-2 font-bold leading-tight text-title-gray"><?php the_title(); ?></h5>
+                    <p class="text-sm leading-tight text-title-gray"><?php echo $groupData['autores'] ?></p>
                 </div>
             </a>
             <?php

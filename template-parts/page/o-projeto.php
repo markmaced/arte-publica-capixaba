@@ -7,11 +7,6 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-5 lg:gap-20">
         <div class="grid gap-6 lg:gap-8 !text-title-gray col-span-3">
-            <div class="font-black text-3xl leading-tight">
-                <h3>10 anos</h3>
-                <h3>78 municípios</h3>
-                <h3>1 estado.</h3>
-            </div>
             <h3 class="font-medium lg:font-bold text-xl lg:text-2xl leading-tight font-inter">Esse repositório buscará oportunizar o acesso às obras e intervenções presentes no espaço urbano capixaba.</h3>
             <div class="">
                 <p class="mb-2">O projeto Arte Pública Capixaba foi idealizado e desenvolvido, desde 2011, pelo Grupo de Pesquisa LEENA (Laboratório de Extensão e Pesquisa em Artes) da Universidade Federal do Espírito Santo (UFES). Durante esses anos, o projeto contou com o apoio da Fundação de Apoio a Ciência e Tecnologia no Espírito Santo (FAPES), da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES), do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq) e da Secretaria de Estado da Cultura (SECULT).</p>
@@ -85,7 +80,7 @@
 
     <div class="py-5 lg:py-10">
         <div class="py-6 mb-10 lg:mb-20 hidden lg:block">
-            <img src="<?php echo get_template_directory_uri() . '/resources/images/arte-publica-projeto.png' ?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/resources/images/organograma_v2.png' ?>" alt="">
         </div>
 
         <div class="lg:hidden py-10">
@@ -104,18 +99,22 @@
                     <p class="text-logo-blue font-medium text-xl mb-2">3ª Etapa</p>
                     <p class="text-title-gray mb-2">Difusão do acervo e estratégias de arrebatamento afetivos</p>
                     <div class="grid gap-4">
-                        <div class="border border-[#CCC] border-opacity-60 p-4 rounded-2xl">
+                        <!-- <div class="border border-[#CCC] border-opacity-60 p-4 rounded-2xl">
                             <p class="text-subtitle-gray font-medium text-xl mb-2">Centro de Documentação do LEENA</p>
                             <p class="text-preto-50">CEDOC - LEENA</p>
-                        </div>
+                        </div> -->
                         <div class="border border-[#CCC] border-opacity-60 p-4 rounded-2xl">
                             <p class="text-subtitle-gray font-medium text-xl mb-2">Kit Experimental Paradidático</p>
                             <p class="text-preto-50">Miniaturas - Impressões 3D</p>
                         </div>
                         <div class="border border-[#CCC] border-opacity-60 p-4 rounded-2xl">
+                            <p class="text-subtitle-gray font-medium text-xl mb-2">Ações Educativas</p>
+                            <p class="text-preto-50">Formação de Professores</p>
+                        </div>
+                        <!-- <div class="border border-[#CCC] border-opacity-60 p-4 rounded-2xl">
                             <p class="text-subtitle-gray font-medium text-xl mb-2">Repositório Virtual</p>
                             <p class="text-preto-50">www.artepublicacapixaba.com.br</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

@@ -21,6 +21,18 @@ window.addEventListener('load', function () {
     spaceBetween: 20
   });
 });
+window.addEventListener('DOMContentLoaded', function () {
+  var acervoswiper = new Swiper('.acervo-swiper', {
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    allowTouchMove: true,
+    spaceBetween: 4,
+    navigation: {
+      nextEl: '.swiper-button-next'
+      // prevEl: '.acervo-swiper-button-prev',
+    }
+  });
+});
 document.addEventListener('DOMContentLoaded', function () {
   function showTab(letter) {
     // Ocultar todos os painéis
@@ -167,6 +179,37 @@ jQuery(document).ready(function ($) {
   $(document).on('change', '#tipoDeFicha', function () {
     showLoading();
     filterLibrary(getFiltersAndSearch());
+  });
+  var searchTimeout;
+  function searchAcervo(search, postType) {
+    $('#archive-search-icon').addClass('!hidden');
+    $('#archive-loading-icon').removeClass('!hidden');
+    $.ajax({
+      url: wpurl.ajax,
+      dataType: 'json',
+      type: 'post',
+      data: {
+        action: 'filter_acervo',
+        search: search,
+        post_type: postType
+      },
+      success: function success(response) {
+        $('#acervo-grid').html(response.data);
+        $('#archive-search-icon').removeClass('!hidden');
+        $('#archive-loading-icon').addClass('!hidden');
+      },
+      error: function error(xhr, exception, _error2) {
+        console.log(_error2);
+      }
+    });
+  }
+  $('#acervo-search').on('keyup', function () {
+    clearTimeout(searchTimeout);
+    var searchValue = $(this).val().trim();
+    var postType = $(this).data('post-type');
+    searchTimeout = setTimeout(function () {
+      searchAcervo(searchValue, postType);
+    }, 300);
   });
 });
 

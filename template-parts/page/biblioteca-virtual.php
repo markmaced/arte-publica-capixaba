@@ -87,18 +87,28 @@
 
                     if ($loopDestaques->have_posts()):
                         while ($loopDestaques->have_posts()):
-                            $loopDestaques->the_post(); ?>
-                            <?php $groupData = get_group_data_by_tipoDeFicha() ?>
+                            $loopDestaques->the_post();
+
+                            $groupData = get_group_data_by_tipoDeFicha();
+
+                            $autores = explode(',', $groupData['autores']);
+                            $ultimoNomes = array_map(function ($autor) {
+                                $partes = explode(' ', trim($autor));
+                                return end($partes);
+                            }, $autores);
+
+                            $autoresFormatados = implode(', ', $ultimoNomes);
+                    ?>
                             <a href="<?php echo the_permalink() ?>"
                                 class="flex flex-row items-center bg-light-gray rounded-lg shadow-common-shadow">
                                 <img class="object-cover w-full rounded-tl-lg h-32 max-w-36 rounded-bl-lg"
                                     src="<?php the_post_thumbnail_url() ?>" alt="">
                                 <div class="flex flex-col justify-between py-7 px-4 lg:p-7 leading-normal font-lato">
-                                    <h5 class="mb-2 font-bold leading-tight text-title-gray line-clamp-2">
+                                    <h5 class="mb-2 font-bold leading-tight text-title-gray">
                                         <?php echo the_title() ?>
                                     </h5>
-                                    <p class="text-sm leading-tight text-title-gray line-clamp-1">
-                                        <?php echo $groupData['autores'] ?>
+                                    <p class="text-sm leading-tight text-title-gray">
+                                        <?php echo $autoresFormatados ?>
                                     </p>
                                 </div>
                             </a>

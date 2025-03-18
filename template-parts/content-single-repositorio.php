@@ -15,7 +15,7 @@
             <div class="lg:col-span-1 lg:mr-4">
                 <div class="mb-8 overflow-hidden rounded-lg shadow-soft-shadow">
                     <img src="<?php the_post_thumbnail_url() ?>" alt=""
-                        class="w-full h-[522px] object-cover rounded-lg bg-light-gray">
+                        class="w-full rounded-lg bg-light-gray">
                 </div>
                 <?php if (!empty(get_field("anexo"))): ?>
                     <a href="<?php echo get_field("anexo")["url"] ?>"
@@ -44,7 +44,7 @@
                     <div class="grid grid-cols-1 gap-4">
 
                         <div>
-                            <h4 class="font-black text-preto-50">Transcrição</h4>
+                            <!-- <h4 class="font-black text-preto-50">Transcrição</h4> -->
                             <p class="text-title-gray"><?php echo get_field('descricao') ?></p>
                         </div>
 
@@ -56,20 +56,20 @@
 
                     <div class="grid grid-cols-1 gap-4">
 
-                        <div>
+                        <!-- <div>
                             <h4 class="font-black text-preto-50">Título</h4>
-                            <p class="text-title-gray"><?php echo the_title(); ?> </p>
-                        </div>
+                            <p class="text-title-gray"><?php # echo the_title(); ?> </p>
+                        </div> -->
 
                         <div>
                             <h4 class="font-black text-preto-50">Autor(es):</h4>
                             <p class="text-title-gray"><?php echo $groupData['autores']; ?></p>
                         </div>
 
-                        <div>
+                        <!-- <div>
                             <h4 class="font-black text-preto-50">Categoria</h4>
-                            <p class="text-title-gray"><?php echo get_field('tipoDeFicha') ?></p>
-                        </div>
+                            <p class="text-title-gray"><?php # echo get_field('tipoDeFicha') ?></p>
+                        </div> -->
 
                         <div>
                             <h4 class="font-black text-preto-50">Palavras-chave:</h4>

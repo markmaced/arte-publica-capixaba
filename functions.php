@@ -132,6 +132,7 @@ require_once($functions_path . 'random-items-collections.php');
 require_once($functions_path . 'breadcrumbs.php');
 require_once($functions_path . 'tipo-de-ficha.php');
 require_once($functions_path . 'filter-library.php');
+require_once($functions_path . 'filter-acervo.php');
 require_once($functions_path . 'log-to-file.php');
 require_once($functions_path). 'get-cities-by-region-with-links.php';
 

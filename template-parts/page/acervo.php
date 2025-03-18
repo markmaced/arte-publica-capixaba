@@ -5,25 +5,32 @@ $random_items = get_random_items_with_images();
 <div class="flex flex-col lg:flex-col-reverse">
     <section class="lg:block py-2 lg:py-10 px-2 lg:px-4">
         <div class="flex gap-2 lg:gap-6 overflow-hidden">
-            <?php
-            $i = 1;
-            foreach ($random_items as $item):
-                if ($i == 6) {
-                    break;
-                }
-                $width = ($i == 1) ? 'w-11/12' : (($i == 2) ? 'w-1/12' : 'w-8/12');
-                $lg_width = ($i == 1 || $i == 3) ? 'lg:w-3/12' : (($i == 2 || $i == 5) ? 'lg:w-2/12' : 'lg:w-4/12');
-                $hidden = ($i == 3 || $i == 4 || $i == 5) ? 'lg:block hidden' : '';
-                ?>
-                <div
-                    class="h-96 bg-medium-gray rounded-lg max-w-full overflow-hidden <?php echo $width . ' ' . $hidden . ' ' . $lg_width ?>">
-                    <a href="<?php echo $item['url'] ?>">
-                        <img src="<?php echo $item['image_url'] ?>"
-                            class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110">
-                    </a>
+
+            <!-- Mobile -->
+            <div class="acervo-swiper !overflow-visible !h-96 w-full">
+                <div class="swiper-wrapper">
+                    <?php
+                    $i = 1;
+                    foreach ($random_items as $item):
+                        if ($i == 6) {
+                            break;
+                        }
+                    ?>
+                        <div class="swiper-slide h-96 bg-medium-gray rounded-lg max-w-full overflow-hidden slide-<?php echo $i; ?> <?php echo ($i >= 3 && $i <= 5) ? 'hide-mobile show-lg' : ''; ?>">
+                            <a href="<?php echo $item['url'] ?>">
+                                <img src="<?php echo $item['image_url'] ?>" class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110">
+                            </a>
+                        </div>
+                    <?php
+                        $i++;
+                    endforeach;
+                    ?>
+
                 </div>
-                <?php $i++; ?>
-            <?php endforeach ?>
+                <div class="swiper-button-next"></div>
+                <!-- <div class="acervo-swiper-button-prev"></div> -->
+            </div>
+
         </div>
     </section>
 
@@ -126,7 +133,7 @@ $random_items = get_random_items_with_images();
                         <?php
                         $collections = get_items_by_region('Região Noroeste');
                         foreach ($collections as $collection) {
-                            echo '<a class="font-lato text-xl " href="' .get_home_url().'/'. $collection['slug'] . '">' . $collection['name'] . '</a>';
+                            echo '<a class="font-lato text-xl " href="' . get_home_url() . '/' . $collection['slug'] . '">' . $collection['name'] . '</a>';
                         }
                         ?>
                     </div>
@@ -154,7 +161,7 @@ $random_items = get_random_items_with_images();
                         <?php
                         $collections = get_items_by_region('Região Metropolitana');
                         foreach ($collections as $collection) {
-                            echo '<a class="font-lato text-xl text-subtitle-gray" href="' .get_home_url().'/'. $collection['slug'] . '">' . $collection['name'] . '</a>';
+                            echo '<a class="font-lato text-xl text-subtitle-gray" href="' . get_home_url() . '/' . $collection['slug'] . '">' . $collection['name'] . '</a>';
                         }
                         ?>
                     </div>
@@ -181,7 +188,7 @@ $random_items = get_random_items_with_images();
                         <?php
                         $collections = get_items_by_region('Região Sudoeste');
                         foreach ($collections as $collection) {
-                            echo '<a class="font-lato text-xl " href="' .get_home_url().'/'. $collection['slug'] . '">' . $collection['name'] . '</a>';
+                            echo '<a class="font-lato text-xl " href="' . get_home_url() . '/' . $collection['slug'] . '">' . $collection['name'] . '</a>';
                         }
                         ?>
                     </div>
@@ -208,10 +215,10 @@ $random_items = get_random_items_with_images();
                 <div x-ref="tab" :style="handleToggle()"
                     class="relative pt-4 overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 font-bold text-xl text-subtitle-gray space-y-4 flex flex-col">
-                    <?php
+                        <?php
                         $collections = get_items_by_region('Região Central');
                         foreach ($collections as $collection) {
-                            echo '<a class="font-lato text-xl " href="' .get_home_url().'/'. $collection['slug'] . '">' . $collection['name'] . '</a>';
+                            echo '<a class="font-lato text-xl " href="' . get_home_url() . '/' . $collection['slug'] . '">' . $collection['name'] . '</a>';
                         }
                         ?>
                     </div>
@@ -236,10 +243,10 @@ $random_items = get_random_items_with_images();
                 <div x-ref="tab" :style="handleToggle()"
                     class="relative pt-4 overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 font-bold text-xl text-subtitle-gray space-y-4 flex flex-col">
-                    <?php
+                        <?php
                         $collections = get_items_by_region('Litoral Norte');
                         foreach ($collections as $collection) {
-                            echo '<a class="font-lato text-xl " href="' .get_home_url().'/'. $collection['slug'] . '">' . $collection['name'] . '</a>';
+                            echo '<a class="font-lato text-xl " href="' . get_home_url() . '/' . $collection['slug'] . '">' . $collection['name'] . '</a>';
                         }
                         ?>
                     </div>
@@ -264,10 +271,10 @@ $random_items = get_random_items_with_images();
                 <div x-ref="tab" :style="handleToggle()"
                     class="relative pt-4 overflow-hidden transition-all duration-300 max-h-0">
                     <div class="px-6 font-bold text-xl text-subtitle-gray space-y-4 flex flex-col">
-                    <?php
+                        <?php
                         $collections = get_items_by_region('Litoral Sul');
                         foreach ($collections as $collection) {
-                            echo '<a class="font-lato text-xl " href="' .get_home_url().'/'. $collection['slug'] . '">' . $collection['name'] . '</a>';
+                            echo '<a class="font-lato text-xl " href="' . get_home_url() . '/' . $collection['slug'] . '">' . $collection['name'] . '</a>';
                         }
                         ?>
                     </div>

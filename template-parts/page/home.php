@@ -26,11 +26,8 @@
             <div class="lg:order-first">
                 <h1 class="w-3/4 font-black text-4xl lg:text-6xl mb-4 text-black font-lato">o repositório da arte
                     pública capixaba</h1>
-                <p class="text-black lg:text-lg mb-4 font-normal font-lato lg:pr-6">Como parte das pesquisas do
-                    Laboratório de Extensão e
-                    Pesquisa em Artes da UFES, este site foi idealizado por José Cirillo, Marcela Belo e Ciliani Celante
-                    a fim de compartilhar o Banco de Dados do LEENA sobre monumentos e intervenções públicas do
-                    ecossistema urbano capixaba.</p>
+                <p class="text-black lg:text-lg mb-4 font-normal font-lato lg:pr-6">Nesse site podem ser acessados conteúdos como fotografias das obras de arte públicas em diversas modalidades, além da produção bibliográfica produzida por pesquisadores da área.</p>
+                <p class="text-black lg:text-lg mb-4 font-normal font-lato lg:pr-6">A expectativa é que este portal seja uma fonte de pesquisa para alunos, professores e a comunidade capixaba em geral. À medida que a pesquisa for avançando passará por constantes atualizações.</p>
                 <a class="inline-flex px-5 py-3 bg-logo-blue text-white rounded-lg text-base font-bold hover:shadow-soft-shadow"
                     href="/acervo">Acesse o Acervo</a>
             </div>
@@ -90,56 +87,12 @@
     </div>
 </section>
 
-<section class="w-full bg-medium-gray py-20 font-lato">
-    <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
-        <div class="w-full flex">
-            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 lg:justify-between">
-                <div class="grid grid-cols-6 gap-4 lg:gap-6" data-aos="fade-in">
-                    <?php
-                    $i = 7;
-                    $items_from_seventh = array_slice($random_items, 6);
-                    foreach ($items_from_seventh as $item):
-                        ?>
-                        <?php $col_span = ($i == 7 || $i == 9) ? 'lg:col-span-3' : ''; ?>
-                        <?php $height = ($i == 7 || $i == 9) ? 'lg:h-64' : 'lg:h-44'; ?>
-                        <?php $hidden = $i == 8 ? 'lg:hidden' : ''; ?>
-                        <div class="h-28 col-span-2 rounded-2xl <?php echo $col_span . ' ' . $hidden . ' ' . $height ?>">
-                            <a href="<?php echo $item['url'] ?>">
-                                <img src="<?php echo $item['image_url'] ?>"
-                                    class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-110 rounded-2xl">
-                            </a>
-                        </div>
-                        <?php $i++; ?>
-                    <?php endforeach ?>
-                </div>
-                <div class="lg:order-first">
-                    <h2 class="font-black text-4xl mb-6 text-black">Arte Pública <br>Capixaba</h2>
-                    <div class="mb-10 space-y-3">
-                        <p class="text-black">
-                            Nesse site podem ser acessados conteúdos como fotografias das obras de arte públicas em
-                            diversas
-                            modalidades, além da produção bibliográfica produzida por pesquisadores da área.
-                        </p>
-                        <p class="text-black">
-                            A expectativa é que este portal seja uma fonte de pesquisa para alunos, professores e a
-                            comunidade capixaba em geral. À medida que a pesquisa for avançando passará por constantes
-                            atualizações.
-                        </p>
-                    </div>
-                    <a class="px-6 py-4 font-inter bg-logo-blue text-white rounded-2xl font-bold inline-flex hover:shadow-soft-shadow"
-                        href="/acervo">Acesse o acervo</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="w-full py-20 font-lato">
     <div class="max-w-screen-tainacan w-full mx-auto px-8 lg:px-0">
         <h2 class="text-title-gray text-4xl font-black mb-6 lg:mb-10" data-aos="fade-up">Mapa do site</h2>
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8" data-aos="fade-up">
             <a href="<?php echo home_url('/o-projeto'); ?>"
-                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow rounded-2xl border border-medium-gray group hover:bg-logo-blue flex flex-col justify-center">
+                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow rounded-2xl border border-apc-pink group hover:bg-apc-pink flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">O projeto</h5>
                     <div>
@@ -153,7 +106,7 @@
                     membros.</p>
             </a>
             <a href="<?php echo home_url('/acervo'); ?>"
-                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-logo-blue rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Acervo</h5>
                     <div>
@@ -167,7 +120,7 @@
                     pelo projeto.</p>
             </a>
             <a href="<?php echo home_url('/biblioteca-virtual'); ?>"
-                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-apc-pink rounded-2xl group hover:bg-apc-pink flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Biblioteca Virtual
                     </h5>
@@ -182,7 +135,7 @@
                     pelo projeto.</p>
             </a>
             <a href="#"
-                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-logo-blue rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Itinerários
                         temáticos</h5>
@@ -197,7 +150,7 @@
                     de maneira a conhecer algumas obras. (Em breve)</p>
             </a>
             <a href="#"
-                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-apc-pink rounded-2xl group hover:bg-apc-pink flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Educativo</h5>
                     <div>
@@ -211,7 +164,7 @@
                     Básico, para auxílio em sala de aula. (Em breve)</p>
             </a>
             <a href="<?php echo home_url('/glossario'); ?>"
-                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-logo-blue rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Glossário</h5>
                     <div>
@@ -225,7 +178,7 @@
                     mencionados em nosso site.</p>
             </a>
             <a href="#"
-                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-medium-gray rounded-2xl group hover:bg-logo-blue flex flex-col justify-center">
+                class="transition duration-500 lg:p-6 p-5 bg-white shadow-soft-shadow border border-apc-pink rounded-2xl group hover:bg-apc-pink flex flex-col justify-center">
                 <div class="flex items-center space-x-1 mb-1">
                     <h5 class="text-2xl font-bold text-title-gray uppercase group-hover:text-white">Colabore</h5>
                     <div>

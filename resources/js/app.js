@@ -4,32 +4,47 @@ window.addEventListener('load', function () {
             slidesPerView: 'auto',
             allowTouchMove: true,
             spaceBetween: 20,
+
+      })
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+      const acervoswiper = new Swiper('.acervo-swiper', {
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            allowTouchMove: true,
+            spaceBetween: 4,
+            navigation: {
+                  nextEl: '.swiper-button-next',
+                  // prevEl: '.acervo-swiper-button-prev',
+            },
+
       })
 });
 
 document.addEventListener('DOMContentLoaded', () => {
       function showTab(letter) {
-          // Ocultar todos os painéis
-          document.querySelectorAll('.tab-panel').forEach(panel => {
-              panel.classList.add('hidden');
-          });
+            // Ocultar todos os painéis
+            document.querySelectorAll('.tab-panel').forEach(panel => {
+                  panel.classList.add('hidden');
+            });
 
-          // Desativar todos os botões
-          document.querySelectorAll('.tab-button').forEach(button => {
-              button.classList.remove('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
-          });
+            // Desativar todos os botões
+            document.querySelectorAll('.tab-button').forEach(button => {
+                  button.classList.remove('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
+            });
 
-          // Mostrar o painel correspondente
-          const panel = document.getElementById('tabpanel-' + letter);
-          if (panel) {
-              panel.classList.remove('hidden');
-          }
+            // Mostrar o painel correspondente
+            const panel = document.getElementById('tabpanel-' + letter);
+            if (panel) {
+                  panel.classList.remove('hidden');
+            }
 
-          // Ativar o botão correspondente
-          const button = [...document.querySelectorAll('.tab-button')].find(btn => btn.dataset.tab === letter);
-          if (button) {
-              button.classList.add('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
-          }
+            // Ativar o botão correspondente
+            const button = [...document.querySelectorAll('.tab-button')].find(btn => btn.dataset.tab === letter);
+            if (button) {
+                  button.classList.add('font-bold', 'text-white', 'bg-logo-blue', 'rounded-full');
+            }
       }
 
       // Inicializar com a aba "A"
@@ -37,12 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Adicionar eventos de clique aos botões
       document.querySelectorAll('.tab-button').forEach(button => {
-          button.addEventListener('click', () => {
-              const letter = button.dataset.tab;
-              showTab(letter);
-          });
+            button.addEventListener('click', () => {
+                  const letter = button.dataset.tab;
+                  showTab(letter);
+            });
       });
-  });
+});
 
 
 
@@ -102,18 +117,18 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
       var mapElement = document.getElementById('map');
 
-      if(mapElement) {
+      if (mapElement) {
             var lat = parseFloat(mapElement.dataset.lat) || -20.3155; // Latitude padrão
             var long = parseFloat(mapElement.dataset.long) || -40.3128; // Longitude padrão
             var mapsLink = mapElement.dataset.maps; // Link do Google Maps
-      
+
             var map = L.map('map').setView([lat, long], 11);
-      
+
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                   maxZoom: 19,
                   attribution: `&copy; <a href="${mapsLink}" target="_blank">Abrir no Google Maps</a>`
             }).addTo(map);
-      
+
             var marker = L.marker([lat, long]).addTo(map);
       }
 });
@@ -169,4 +184,44 @@ jQuery(document).ready(function ($) {
             showLoading();
             filterLibrary(getFiltersAndSearch());
       });
+
+      let searchTimeout;
+
+      function searchAcervo(search, postType) {
+
+            $('#archive-search-icon').addClass('!hidden');
+            $('#archive-loading-icon').removeClass('!hidden');
+
+            $.ajax({
+                  url: wpurl.ajax,
+                  dataType: 'json',
+                  type: 'post',
+                  data: {
+                        action: 'filter_acervo',
+                        search: search,
+                        post_type: postType
+                  },
+                  success: function (response) {
+                        $('#acervo-grid').html(response.data);
+
+                        $('#archive-search-icon').removeClass('!hidden');
+                        $('#archive-loading-icon').addClass('!hidden');
+                  },
+                  error: function (xhr, exception, error) {
+                        console.log(error);
+                  }
+            });
+      }
+
+      $('#acervo-search').on('keyup', function () {
+            clearTimeout(searchTimeout);
+
+            let searchValue = $(this).val().trim();
+            let postType = $(this).data('post-type');
+
+            searchTimeout = setTimeout(() => {
+                  searchAcervo(searchValue, postType);
+            }, 300);
+      });
+
 });
